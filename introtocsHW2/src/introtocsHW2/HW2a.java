@@ -36,22 +36,14 @@ public class HW2a {
      * @param arr2 The second array.
      * @return The dot product of arr1 and arr2.
      */
+    ///Code Completed ☺
     public static double dotProduct(double[] arr1, double[] arr2) {
         double output = 0;
-        ///////Insert your code below this line. //////////////
-        /*
-        Compute the dot product of two arrays.
-        The dot product is the sum of the products of corresponding elements.
+        for( int i = 0; i < arr1.length; i++ ){
+            output += arr1[i] * arr2[i];
 
-        Example:
-        arr1 = [1, 2, 3]
-        arr2 = [4, 5, 6]
-        dotProduct(arr1, arr2) should return 1*4 + 2*5 + 3*6 = 32
+        }
 
-        Note: This function should be used in other parts of the assignment- avoid code redundancy!!
-        */
-
-        /////////All student code should be above this line.////////////////
         return output;
     }
 
@@ -62,20 +54,16 @@ public class HW2a {
      * @param matrix The input matrix as a 2D array.
      * @return The transposed matrix.
      */
+    ///Code Completed ☺
     public static double[][] transposeMatrix(double[][] matrix) {
-        double[][] output = {{}};
-        ///////Insert your code below this line. //////////////
-        /*
-        Transpose a matrix.
-        The transpose of a matrix is obtained by swapping its rows with columns.
+        double[][] output = {
+                {matrix[0][0],matrix[1][0]},
+                {matrix[0][1],matrix[1][1]},
+                {matrix[0][2],matrix[1][2]}
+        };
 
-        Example:
-        matrix = {{1, 2, 3},
-                  {4, 5, 6}}
-        transposeMatrix(matrix) should return {{1, 4}, {2, 5}, {3, 6}}
-        */
 
-        /////////All student code should be above this line.////////////////
+
         return output;
     }
 
