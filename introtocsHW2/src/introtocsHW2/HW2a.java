@@ -24,7 +24,7 @@ import java.util.Arrays;
  * Important note: I remind you that good coding practice should avoid code redundancy, you should have nearly all methods at 5 lines or fewer.
  * If you need to write longer methods, you should break them up into multiple smaller methods.
  *
- * @author Alon Kaya
+ * @author Yanir Latyshev | ID:207325093
  */
 public class HW2a {
 
