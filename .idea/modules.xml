@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SCE.iml" filepath="$PROJECT_DIR$/.idea/SCE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/introtocsHW1/introtocsHW1.iml" filepath="$PROJECT_DIR$/introtocsHW1/introtocsHW1.iml" />
       <module fileurl="file://$PROJECT_DIR$/introtocsHW2/introtocsHW2.iml" filepath="$PROJECT_DIR$/introtocsHW2/introtocsHW2.iml" />
     </modules>
   </component>
