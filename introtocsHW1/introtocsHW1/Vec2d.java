@@ -1,4 +1,4 @@
-package introtocsHW1;
+package introtocsHW1.introtocsHW1;
 
 /**
  * An immutable 2d vector class.

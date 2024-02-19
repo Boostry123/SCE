@@ -1,4 +1,4 @@
-package introtocsHW1;
+package introtocsHW1.introtocsHW1;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;

@@ -18,7 +18,8 @@
  * Questions regarding this assignment should be addressed to Dr. Neimand,
  * dovne@sce.ac.il
  */
-package introtocsHW1;
+package introtocsHW1.introtocsHW1;
+
 
 //import static introtocsHW1.PartialSolution.ballInBox;
 
@@ -91,10 +92,11 @@ public class HW1 {
 
         boolean areEqual;
 
-        double margin = Math.abs(error);
+        double margin = Math.abs(x-y);
 
 
         areEqual = margin<=error ?  true : false;
+
 
         return areEqual;
     }
@@ -433,8 +435,8 @@ public class HW1 {
 
          for(int i = 0; i < gridWidth; i++){
              for(int j = 0 ;j < gridWidth ; j++){
-                 double x = -1 *i ;
-                 double y = -1 * j;
+                 double x = -1+step *i ;
+                 double y = -1+step * j;
 
                  if(x*x + y*y <=1){
                      pointsInsideCircle++;

@@ -1,6 +1,4 @@
-package introtocsHW1;
-
-import java.awt.Point;
+package introtocsHW1.introtocsHW1;
 
 /**
  *
