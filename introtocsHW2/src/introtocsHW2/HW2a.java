@@ -68,6 +68,7 @@ public class HW2a {
     }
 
 
+
     /**
      * Additional function: Check if a matrix is symmetric.
      *
