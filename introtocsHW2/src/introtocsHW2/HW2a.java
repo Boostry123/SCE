@@ -56,11 +56,7 @@ public class HW2a {
      */
     ///Code Completed ☺
     public static double[][] transposeMatrix(double[][] matrix) {
-        double[][] output = {
-                {matrix[0][0],matrix[1][0]},
-                {matrix[0][1],matrix[1][1]},
-                {matrix[0][2],matrix[1][2]}
-        };
+        double[][] output = new double[matrix[0].length][matrix.length];
 
 
 
