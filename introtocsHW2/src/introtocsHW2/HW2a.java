@@ -24,11 +24,9 @@ import java.util.Arrays;
  * Important note: I remind you that good coding practice should avoid code redundancy, you should have nearly all methods at 5 lines or fewer.
  * If you need to write longer methods, you should break them up into multiple smaller methods.
  *
- * @author Yanir Latyshev | ID:207325093
+ * @author Alon Kaya
  */
 public class HW2a {
-
-
     /**
      * Compute the dot product of two arrays.
      *
@@ -69,7 +67,6 @@ public class HW2a {
     }
 
 
-
     /**
      * Additional function: Check if a matrix is symmetric.
      *
@@ -102,7 +99,7 @@ public class HW2a {
      * @return The resulting matrix after scalar multiplication.
      */
     public static double[][] scalarMultiplyMatrix(double[][] matrix, int scalar) {
-        double[][] output = {{}};
+        double[][] output = new double[matrix.length][matrix[0].length];
         ///////Insert your code below this line. //////////////
         /*
         Multiply a matrix by a scalar.
@@ -126,7 +123,7 @@ public class HW2a {
      * @return A new array where the number has been added to each element.
      */
     public static double[] addNumberToArray(double[] arr, double number) {
-        double[] result = {};
+        double[] result = new double[arr.length];
         ///////Insert your code below this line. //////////////
     /*
     Add a number to all values in an array.

@@ -64,7 +64,7 @@ public class HW2b {
      */
     public static void main(String[] args) {
         // Test arrayToString
-        double[] arrToString = {1, 2, 3};
+        int[] arrToString = {1, 2, 3};
 //        System.out.println(arrayToString(arrToString).equals("123"));
 
         double[][] matrix1 = {{1, 2}, {3, 4}};
@@ -101,12 +101,12 @@ public class HW2b {
 //        System.out.println(idBikoret(id).equals("54370042-1"));
 
         String id2 = "ABC12#777#xyD?EHz!555";
-        double[] expected3 = {8,3,6,4};
+        int[] expected3 = {8,3,6,4};
 //        System.out.println(Arrays.equals(countCharacters(id2), expected3));
 
         char [][] charMat = {{'a','b','c','d'},{'e','f','g','h'},{'w','x','y','z'}};
         String word = "efg";
-        double[] expected4 = {0,1,0};
+        int[] expected4 = {0,1,0};
 //        System.out.println(Arrays.equals(findString(charMat, word), expected4));
     }
 }
