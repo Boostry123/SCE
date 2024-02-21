@@ -74,20 +74,28 @@ public class HW2a {
      * @return True if the matrix is symmetric, false otherwise.
      */
     public static boolean isMatrixSymmetric(double[][] matrix) {
-        boolean output = false;
-        ///////Insert your code below this line. //////////////
-        /*
-        Check if a matrix is symmetric.
-        A matrix is symmetric if it is equal to its transpose.
+        boolean output = true;
 
-        Example:
-        symmetricMatrix = {{1, 2, 3},
-                           {2, 4, 5},
-                           {3, 5, 6}}
-        isMatrixSymmetric(symmetricMatrix) should return true
-        */
+        double[][] transposedMatrix = transposeMatrix(matrix);
+        if(matrix.length == transposedMatrix.length){
+            for(int i = 0 ; i < matrix.length; i++){
+                if(output == false) {
+                    break;
+                }
+                for(int j = 0 ; j < matrix.length; j ++){
+                    output = (matrix[i][j] == transposedMatrix[i][j]) ? true : false;
+                    if(output == false){
+                        break;
+                    }
 
-        /////////All student code should be above this line.////////////////
+                }
+
+
+            }
+        }
+
+
+
         return output;
     }
 
