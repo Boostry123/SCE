@@ -73,6 +73,7 @@ public class HW2a {
      * @param matrix The input matrix as a 2D array.
      * @return True if the matrix is symmetric, false otherwise.
      */
+    ///Code Completed ☺
     public static boolean isMatrixSymmetric(double[][] matrix) {
         boolean output = true;
 
@@ -106,19 +107,16 @@ public class HW2a {
      * @param scalar The scalar to multiply the matrix by.
      * @return The resulting matrix after scalar multiplication.
      */
+    ///Code Completed ☺
     public static double[][] scalarMultiplyMatrix(double[][] matrix, int scalar) {
         double[][] output = new double[matrix.length][matrix[0].length];
-        ///////Insert your code below this line. //////////////
-        /*
-        Multiply a matrix by a scalar.
-        Each element of the matrix is multiplied by the scalar.
 
-        Example:
-        originalMatrix = {{1, 2}, {3, 4}}
-        scalarMultiplyMatrix(originalMatrix, 2) should return {{2, 4}, {6, 8}}
-        */
+        for(int i = 0 ; i < matrix.length; i++){
+            for(int j = 0 ; j < matrix[0].length; j ++){
+                output[i][j]= (matrix[i][j])*scalar;
+            }
+        }
 
-        /////////All student code should be above this line.////////////////
         return output;
     }
 
@@ -130,19 +128,16 @@ public class HW2a {
      * @param number The number to be added to all values in the array.
      * @return A new array where the number has been added to each element.
      */
+    ///Code Completed ☺
     public static double[] addNumberToArray(double[] arr, double number) {
         double[] result = new double[arr.length];
-        ///////Insert your code below this line. //////////////
-    /*
-    Add a number to all values in an array.
 
-    Example:
-    arr = {1.5, 2.5, 3.5}
-    number = 2.0
-    addNumberToArray(arr, number) should return a new array {3.5, 4.5, 5.5}
-    */
 
-        /////////All student code should be above this line.////////////////
+        for(int j = 0 ; j < arr.length; j ++){
+            result[j]= (arr[j])+number;
+        }
+
+
         return result;
     }
 

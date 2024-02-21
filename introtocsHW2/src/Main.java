@@ -3,12 +3,23 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        double[][] matrix = {{1, 2, 3},
-                            {2, 4, 5},
-                            {3, 5, 6}};
-        System.out.println(isMatrixSymmetric(matrix));
+        double[] matrix = {1, 2, 3};
+
+        System.out.println(Arrays.toString(addNumberToArray(matrix,2)));
 
 
+    }
+
+    public static double[] addNumberToArray(double[] arr, double number) {
+        double[] result = new double[arr.length];
+
+
+        for(int j = 0 ; j < arr.length; j ++){
+            result[j]= (arr[j])+number;
+        }
+
+
+        return result;
     }
 
 
