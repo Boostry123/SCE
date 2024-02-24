@@ -66,6 +66,31 @@ public class HW2b {
         return resault;
     }
 
+    //This method has been added for the isVectorOrthogonal method.
+    public static double dotProduct(double[] arr1, double[] arr2) {
+        double output = 0;
+        for( int i = 0; i < arr1.length; i++ ){
+            output += arr1[i] * arr2[i];
+
+        }
+
+        return output;
+    }
+
+    //Code completed ☺
+    public static boolean isVectorsOrthogonal (double[] vector1, double[] vector2){
+        return (dotProduct(vector1 , vector2) == 0); //The method dotProduct is written just above this method.
+    }
+
+    public static boolean checkIfEven (double[] arr) {
+        boolean result = false;
+        for(double x : arr){
+            result = x%2 == 0;
+        }
+        return result;
+    }
+
+
 
     //YOU SHOULD WRITE YOUR CODE ABOVE THIS LINE!
 
@@ -116,11 +141,11 @@ public class HW2b {
         // Test isVectorOrthogonalToMatrix
         double[] orthogonalVector = {1, 2};
         double[] orthogonalMatrix = {2, -1};
-//        System.out.println(isVectorsOrthogonal(orthogonalVector, orthogonalMatrix));
+        System.out.println(isVectorsOrthogonal(orthogonalVector, orthogonalMatrix));
 
         // Test countRowsWithEvenElements
         double[] arr = {2, 4, 6};
-//        System.out.println(checkIfEven(arr));
+        System.out.println(checkIfEven(arr));
 
         // Test countRowsWithEvenElements
         double[][] evenElementMatrix = {{2, 4, 6}, {8, 10, 12}, {14, 16, 18}};
