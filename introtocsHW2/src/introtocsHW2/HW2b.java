@@ -90,6 +90,16 @@ public class HW2b {
         return result;
     }
 
+    public static int countRowsWithEvenElements (double[][] arr){
+        int counter = 0;
+
+        for(int i = 0 ; i < arr.length; i++){
+            counter += (checkIfEven(arr[i]) ? 1 : 0);
+        }
+        return counter;
+    }
+
+
 
 
     //YOU SHOULD WRITE YOUR CODE ABOVE THIS LINE!
@@ -149,7 +159,7 @@ public class HW2b {
 
         // Test countRowsWithEvenElements
         double[][] evenElementMatrix = {{2, 4, 6}, {8, 10, 12}, {14, 16, 18}};
-//        System.out.println(Math.abs(countRowsWithEvenElements(evenElementMatrix) - 3) < 0.000001);
+        System.out.println(Math.abs(countRowsWithEvenElements(evenElementMatrix) - 3) < 0.000001);
 
 
         // Test addNumberToMatrix
