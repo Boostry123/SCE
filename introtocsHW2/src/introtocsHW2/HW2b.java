@@ -24,8 +24,10 @@ import java.util.Arrays;
  * Important note: I remind you that good coding practice should avoid code redundancy, you should have nearly all methods at 5 lines or fewer.
  * If you need to write longer methods, you should break them up into multiple smaller methods.
  *
- * @author Yanir latyshev | 207325093
- */
+ * */
+ //Assignment:2
+ // @author Yanir latyshev | 207325093
+
 
 public class HW2b {
     //YOU SHOULD WRITE YOUR CODE BELOW THIS LINE!
@@ -40,20 +42,28 @@ public class HW2b {
     };
 
     //Not yet Completed
-    public static double[][] multiplyMatrices(double[][] matrix1, double[][] matrix2) {
-        double[][] arr = new double[matrix1.length][matrix2[0].length];
-        for (int i = 0; i < matrix2[0].length; i++) {         //iterates through the amount of 'columns' in matrix2
-            for (int j = 0; j < matrix1.length; j++) {        //iterates through the amount of 'rows' in matrix1
-                for (int k = 0; k < matrix1.length; k++) { // iterates through the amount of 'rows' in matrix1
-                    arr[i][j] += matrix1[j][k] * matrix2[k][j];
-                }
-            }
+//    public static double[][] multiplyMatrices(double[][] matrix1, double[][] matrix2) {
+//        double[][] arr = new double[matrix1.length][matrix2[0].length];
+//        for (int i = 0, j= 0; i < matrix1.length; i++) {         //iterates through the amount of 'rows' in matrix1
+//            for(int j = 0 ; j < matrix1[])
+//
+//
+//        }
+//        for( double[] x : arr){
+//            System.out.println(Arrays.toString(x));
+//        }
+//        return arr;
+//    }
 
+    //Code Completed ☺
+    public static double vectorMagnitude(double[] vector){
+        double step1 = 0;
+        double resault = 0;
+        for( double x : vector){
+            step1 += Math.pow(x,2);
         }
-        for( double[] x : arr){
-            System.out.println(Arrays.toString(x));
-        }
-        return arr;
+        resault = Math.sqrt(step1);
+        return resault;
     }
 
 
@@ -97,11 +107,11 @@ public class HW2b {
         double[][] matrix2 = {{5, 6},
                              {7, 8}};
         double[][] expected = {{19,22}, {43,50}};
-        System.out.println(EqualMatrices(multiplyMatrices(matrix1, matrix2), expected));
+        //System.out.println(EqualMatrices(multiplyMatrices(matrix1, matrix2), expected));
 
         // Test vectorMagnitude
         double[] vectorMag = {3, 4};
-//        System.out.println(Math.abs(vectorMagnitude(vectorMag) - 5.0) < 0.000001);
+        System.out.println(Math.abs(vectorMagnitude(vectorMag) - 5.0) < 0.000001);
 
         // Test isVectorOrthogonalToMatrix
         double[] orthogonalVector = {1, 2};
