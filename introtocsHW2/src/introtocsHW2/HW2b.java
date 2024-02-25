@@ -121,8 +121,8 @@ public class HW2b {
 
     public static String idBikoret(String id){
         int newId = Integer.parseInt(id);
-        int resault = 0;
-        int count = 0 ;
+        int resault = 0 , count = 0;
+
         for(int i = 0 ; i < 8 ; i++){
             if(String.valueOf(newId).length() % 2 == 1){
                 resault += newId%10;
