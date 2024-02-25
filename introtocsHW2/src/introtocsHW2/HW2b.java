@@ -99,6 +99,52 @@ public class HW2b {
         return counter;
     }
 
+    //This method has been added from HW2a for the use in addNumberToMatrix method.
+    public static double[] addNumberToArray(double[] arr, double number) {
+        double[] result = new double[arr.length];
+
+
+        for(int j = 0 ; j < arr.length; j ++){
+            result[j]= (arr[j])+number;
+        }
+
+
+        return result;
+    }
+
+    public static double[][] addNumberToMatrix(double[][] matrix, double number){
+        for(int i = 0; i<matrix.length; i++){
+            matrix[i] = addNumberToArray(matrix[i], number);
+        }
+        return matrix;
+    }
+
+    public static String idBikoret(String id){
+        int newId = Integer.parseInt(id);
+        int resault = 0;
+        int count = 0 ;
+        for(int i = 0 ; i < 8 ; i++){
+            if(String.valueOf(newId).length() % 2 == 1){
+                resault += newId%10;
+                newId /= 10;
+            }else{
+                int temp = (newId%10) *2;
+                resault += temp%10;
+                temp /= 10;
+                resault += temp;
+                newId /= 10;
+            }
+
+
+        }
+        while(resault % 10 != 0) {
+            resault += 1;
+            count++;
+        }
+
+        return String.valueOf(id+ "-" + Integer.toString(count));
+    }
+
 
 
 
@@ -165,12 +211,13 @@ public class HW2b {
         // Test addNumberToMatrix
         double[][] matrixToAdd = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
         double numberToAddToMatrix = 2.0;
-//        double[][] resultMatrixAdd = addNumberToMatrix(matrixToAdd, numberToAddToMatrix);
+
+        double[][] resultMatrixAdd = addNumberToMatrix(matrixToAdd, numberToAddToMatrix);
         double[][] expected2 = {{3.0, 4.0, 5.0}, {6.0, 7.0, 8.0}};
-//        System.out.println(EqualMatrices(resultMatrixAdd, expected2));
+        System.out.println(EqualMatrices(resultMatrixAdd, expected2));
 
         String id = "54370042";
-//        System.out.println(idBikoret(id).equals("54370042-1"));
+        System.out.println(idBikoret(id).equals("54370042-1"));
 
         String id2 = "ABC12#777#xyD?EHz!555";
         int[] expected3 = {8,3,6,4};
