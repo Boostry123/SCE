@@ -49,7 +49,7 @@ public class HW2b {
         for (int i = 0; i < matrix1.length; i++) {         //iterates through the amount of 'rows' in matrix1
             for(int j = 0 ; j < matrix2[0].length; j++){                // iterates through the amount of 'columns' in matrix2
                 for(int k = 0 ; k < matrix1[0].length; k++){
-                    arr[i][j] += matrix1[j][k] * matrix2[k][j];
+                    arr[i][j] += matrix1[i][k] * matrix2[k][j];
 
                 }
             }
@@ -150,6 +150,24 @@ public class HW2b {
         }
 
         return String.valueOf(id+ "-" + Integer.toString(count));
+    }
+
+    public static  int[] countCharacters(String id){
+        int[] result = {0,0,0,0};
+        char[] idNew = id.toCharArray();
+        for(int i = 0 ; i < id.length() ; i++){
+            char temp = idNew[i];
+            if(Character.isDigit(temp)){
+                result[0]++;
+            }else if(Character.isLowerCase(temp)){
+                result[1]++;
+            }else if(Character.isUpperCase(temp)){
+                result[2]++;
+            }else{
+                result[3]++;
+            }
+        }
+        return result;
     }
 
 
