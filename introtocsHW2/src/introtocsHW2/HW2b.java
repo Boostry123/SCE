@@ -41,19 +41,26 @@ public class HW2b {
       return arrAsString;
     };
 
-    //Not yet Completed
-//    public static double[][] multiplyMatrices(double[][] matrix1, double[][] matrix2) {
-//        double[][] arr = new double[matrix1.length][matrix2[0].length];
-//        for (int i = 0, j= 0; i < matrix1.length; i++) {         //iterates through the amount of 'rows' in matrix1
-//            for(int j = 0 ; j < matrix1[])
-//
-//
-//        }
-//        for( double[] x : arr){
-//            System.out.println(Arrays.toString(x));
-//        }
-//        return arr;
-//    }
+
+
+    public static double[][] multiplyMatrices(double[][] matrix1, double[][] matrix2) {
+
+        double[][] arr = new double[matrix1.length][matrix2[0].length];
+        for (int i = 0; i < matrix1.length; i++) {         //iterates through the amount of 'rows' in matrix1
+            for(int j = 0 ; j < matrix2[0].length; j++){                // iterates through the amount of 'columns' in matrix2
+                for(int k = 0 ; k < matrix1[0].length; k++){
+                    arr[i][j] += matrix1[j][k] * matrix2[k][j];
+
+                }
+            }
+
+
+        }
+        for( double[] x : arr){
+            System.out.println(Arrays.toString(x));
+        }
+        return arr;
+    }
 
     //Code Completed ☺
     public static double vectorMagnitude(double[] vector){
@@ -188,7 +195,7 @@ public class HW2b {
         double[][] matrix2 = {{5, 6},
                              {7, 8}};
         double[][] expected = {{19,22}, {43,50}};
-        //System.out.println(EqualMatrices(multiplyMatrices(matrix1, matrix2), expected));
+        System.out.println(EqualMatrices(multiplyMatrices(matrix1, matrix2), expected));
 
         // Test vectorMagnitude
         double[] vectorMag = {3, 4};
