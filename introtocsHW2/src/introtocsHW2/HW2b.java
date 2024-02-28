@@ -152,6 +152,7 @@ public class HW2b {
         return String.valueOf(id+ "-" + Integer.toString(count));
     }
 
+    //Code completed ☺
     public static  int[] countCharacters(String id){
         int[] result = {0,0,0,0};
         char[] idNew = id.toCharArray();
@@ -170,7 +171,26 @@ public class HW2b {
         return result;
     }
 
+public static  int[] findString(char[][] charMat, String word){
+        char[] wordChars = word.toCharArray();
 
+
+        int[] result = {0,0,0};
+        for(int i = 0 ; i < charMat.length; i++){
+            for(int j = 0 ; j < charMat[0].length; j++){
+                String temp = "";
+                temp += Character.toString(charMat[i][j]);
+                if(temp.equals(wordChars)){
+                    return result;
+                }
+
+            }
+
+
+
+        }
+        return result;
+}
 
 
     //YOU SHOULD WRITE YOUR CODE ABOVE THIS LINE!
@@ -246,12 +266,12 @@ public class HW2b {
 
         String id2 = "ABC12#777#xyD?EHz!555";
         int[] expected3 = {8,3,6,4};
-//        System.out.println(Arrays.equals(countCharacters(id2), expected3));
+        System.out.println(Arrays.equals(countCharacters(id2), expected3));
 
         char [][] charMat = {{'a','b','c','d'},{'e','f','g','h'},{'w','x','y','z'}};
         String word = "efg";
         int[] expected4 = {0,1,0};
-//        System.out.println(Arrays.equals(findString(charMat, word), expected4));
+        System.out.println(Arrays.equals(findString(charMat, word), expected4));
     }
 }
 
