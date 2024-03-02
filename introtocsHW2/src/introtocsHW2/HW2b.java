@@ -171,22 +171,44 @@ public class HW2b {
         return result;
     }
 
+    public static char[][] transposeMatrix(char[][] matrix) {
+        char[][] output = new char[matrix[0].length][matrix.length];
+
+        for(int i = 0; i < matrix[0].length; i++){
+            for(int j = 0 ; j < matrix.length; j++){
+                output[i][j] = matrix[j][i];
+            }
+        }
+
+
+        return output;
+    }
+
+    //Code completed;
 public static  int[] findString(char[][] charMat, String word){
-        char[] wordChars = word.toCharArray();
-
-
         int[] result = {0,0,0};
-        for(int i = 0 ; i < charMat.length; i++){
-            for(int j = 0 ; j < charMat[0].length; j++){
-                String temp = "";
-                temp += Character.toString(charMat[i][j]);
-                if(temp.equals(wordChars)){
+        char[][] charMatTran = transposeMatrix(charMat);
+        for(int i = 0 ; i < charMat.length ; i++){
+            String tempWord = String.valueOf(charMat[i]);
+            if(tempWord.contains(word) ){
+                if(i >0){
+                    result[0] = 0;
+                    result[1]=i;
                     return result;
                 }
 
             }
-
-
+            String tempWordColumns = String.valueOf(charMatTran[i]);
+            if(tempWordColumns.contains(word) ){
+                result[0] = 1;
+                if(i > 0){
+                    result[0] = 1;
+                    result[1] = i;
+                    return result;
+                }
+            }else{
+                result[0] = -1;
+            }
 
         }
         return result;
