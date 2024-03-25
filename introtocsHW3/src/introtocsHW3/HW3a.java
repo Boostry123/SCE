@@ -48,6 +48,23 @@ public class HW3a {
 
 
     }
+    public static boolean isPalindrome(String str){
+        String reversedWord = "";
+        String reversed = reverse(str, str.length(), reversedWord);
+        if(str.equals(reversed)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    private static String reverse(String str, int length, String reversed){
+        if(length == 0 ){
+            return reversed;
+        }else{
+            reversed += str.charAt(length-1);
+            return reverse(str, length-1, reversed);
+        }
+    }
 
     /**
      * Main method for testing the implemented functions.
@@ -62,9 +79,9 @@ public class HW3a {
         String str1 = "abba";
         String str2 = "t6r6t";
         String str3 = "hello";
-        //System.out.println("Is \"" + str1 + "\" a palindrome? " + isPalindrome(str1)); // Is "abba" a palindrome? true
-        //System.out.println("Is \"" + str2 + "\" a palindrome? " + isPalindrome(str2)); // Is "t6r6t" a palindrome? true
-        //System.out.println("Is \"" + str3 + "\" a palindrome? " + isPalindrome(str3)); // Is "hello" a palindrome? false
+        System.out.println("Is \"" + str1 + "\" a palindrome? " + isPalindrome(str1)); // Is "abba" a palindrome? true
+        System.out.println("Is \"" + str2 + "\" a palindrome? " + isPalindrome(str2)); // Is "t6r6t" a palindrome? true
+        System.out.println("Is \"" + str3 + "\" a palindrome? " + isPalindrome(str3)); // Is "hello" a palindrome? false
 
         //---------------Q3---------------------
         String text = "This is a test string";
