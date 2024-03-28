@@ -82,12 +82,26 @@ public class HW3a {
         }
     }
 
+    /**
+     * @param text
+     * @param word
+     * @return if word in text returns true , else false
+     */
     public static boolean searchWord(String text, String word){
         int counter1=0;
         int counter2 = 0;
         boolean result = searchWord(text, word,false,counter1,counter2);
         return result;
     }
+
+    /**
+     * @param text
+     * @param word
+     * @param status
+     * @param counter1
+     * @param counter2
+     * @return if word in text returns true , else false
+     */
     private static boolean searchWord(String text, String word,boolean status,int counter1,int counter2){
 
         if(counter2 == word.length()){
@@ -105,6 +119,44 @@ public class HW3a {
             return searchWord(text,word,status,counter1,counter2);
         }
 
+    }
+
+    /**
+     * @param str
+     * @return a new str made from the chars at the even index of str
+     */
+    public static String getEvenIndexLetters(String str){
+        int index = 0;
+        String newWord = "";
+        String result = getEvenIndexLetters(str, index,newWord );
+        return result;
+    }
+
+    /**
+     * @param str
+     * @param index
+     * @param newWord
+     * @return a new str made from the chars at the even index of str
+     */
+    private static String getEvenIndexLetters(String str, int index, String newWord){
+        if(index%2 == 0){
+            newWord += str.charAt(index);
+            if(index == str.length()-1){
+                return newWord;
+            }
+            index++;
+            return getEvenIndexLetters(str ,index , newWord);
+        }else{
+            index++;
+            return getEvenIndexLetters(str ,index , newWord);
+        }
+    }
+    public static boolean isPower(int n, int m){
+        boolean result = isPower(n , m ,0);
+        return result;
+    }
+    public static boolean isPower(int n, int m) {
+    }
     }
 
     /**
@@ -131,7 +183,7 @@ public class HW3a {
 
         //---------------Q4---------------------
         String str = "Hello world";
-        //System.out.println("Even index letters: " + getEvenIndexLetters(str)); // Even index letters: Hlowrd
+        System.out.println("Even index letters: " + getEvenIndexLetters(str)); // Even index letters: Hlowrd
 
         //---------------Q5---------------------
         int n1 = 2, m1 = 8;
