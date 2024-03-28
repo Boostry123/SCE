@@ -155,8 +155,16 @@ public class HW3a {
         boolean result = isPower(n , m ,0);
         return result;
     }
-    public static boolean isPower(int n, int m) {
-    }
+    public static boolean isPower(int n, int m, int index) {
+        if(m <= index){
+            return false;
+        }
+        if(Math.pow(n,index) == m){
+            return true;
+        }else{
+            index++;
+            return isPower(n , m , index);
+        }
     }
 
     /**
@@ -187,10 +195,10 @@ public class HW3a {
 
         //---------------Q5---------------------
         int n1 = 2, m1 = 8;
-        //System.out.println("Is " + m1 + " a power of " + n1 + "? " + isPower(n1, m1)); // Is 8 a power of 2? true
+        System.out.println("Is " + m1 + " a power of " + n1 + "? " + isPower(n1, m1)); // Is 8 a power of 2? true
 
         int n2 = 3, m2 = 6;
-        //System.out.println("Is " + m2 + " a power of " + n2 + "? " + isPower(n2, m2)); // Is 6 a power of 3? false
+        System.out.println("Is " + m2 + " a power of " + n2 + "? " + isPower(n2, m2)); // Is 6 a power of 3? false
 
         //---------------Q6---------------------
         int[][] matrix = {
