@@ -31,6 +31,10 @@ import java.util.Arrays;
 
 public class HW3a {
 
+    /**
+     * @param arr
+     * @return finds and returns the biggest number from an array
+     */
     public static int findMax(int[] arr){
         int max = findMax(arr, arr.length-1, arr[arr.length-1]);
         return max;
@@ -48,6 +52,11 @@ public class HW3a {
 
 
     }
+
+    /**
+     * @param str
+     * @return if str palindrome returns true ,else false
+     */
     public static boolean isPalindrome(String str){
         String reversedWord = "";
         String reversed = reverse(str, str.length(), reversedWord);
@@ -57,6 +66,13 @@ public class HW3a {
             return false;
         }
     }
+
+    /**
+     * @param str
+     * @param length
+     * @param reversed
+     * @return reversed str
+     */
     private static String reverse(String str, int length, String reversed){
         if(length == 0 ){
             return reversed;
@@ -64,6 +80,31 @@ public class HW3a {
             reversed += str.charAt(length-1);
             return reverse(str, length-1, reversed);
         }
+    }
+
+    public static boolean searchWord(String text, String word){
+        int counter1=0;
+        int counter2 = 0;
+        boolean result = searchWord(text, word,false,counter1,counter2);
+        return result;
+    }
+    private static boolean searchWord(String text, String word,boolean status,int counter1,int counter2){
+
+        if(counter2 == word.length()){
+            return true;
+        }else if(counter1 == text.length()){
+            return status;
+        }
+        if(text.charAt(counter1) == word.charAt(counter2)){
+            counter1++;
+            counter2++;
+            return searchWord(text,word,status,counter1,counter2);
+        }else{
+            counter2 = 0;
+            counter1++;
+            return searchWord(text,word,status,counter1,counter2);
+        }
+
     }
 
     /**
@@ -86,7 +127,7 @@ public class HW3a {
         //---------------Q3---------------------
         String text = "This is a test string";
         String word = "test";
-       // System.out.println("Word found: " + searchWord(text, word)); // Word found: true
+        System.out.println("Word found: " + searchWord(text, word)); // Word found: true
 
         //---------------Q4---------------------
         String str = "Hello world";
