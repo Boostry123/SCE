@@ -51,6 +51,60 @@ public class HW3b {
         }
         return -1;
     }
+
+    public static String findSubstring(String str){
+        String maxSubstring = "";
+        int maxLength = 0;
+
+        String currentSubstring = "";
+        int currentLength = 0;
+        if(str!=null){
+            currentSubstring += str.charAt(0);
+            currentLength++;
+        }
+
+        for(int i = 1; i < str.length() ; i++){
+            if((str.charAt(i) - currentSubstring.charAt(currentSubstring.length()-1) == 1) || (currentSubstring.charAt(currentSubstring.length()-1) == '9' && str.charAt(i)=='0')){
+
+                currentSubstring += str.charAt(i);
+                currentLength++;
+            }else{
+                if(currentLength > maxLength){
+                    maxSubstring = currentSubstring;
+                    maxLength = currentLength;
+                }
+                currentLength=1;
+                currentSubstring=""+str.charAt(i);
+            }
+        }
+        if(currentLength> maxLength){
+            maxSubstring = currentSubstring;
+        }
+        return maxSubstring;
+    }
+
+    public static int jumpSearch(int[] arr, int k, int step){
+        int low = 0;
+        int high = arr.length;
+        return jumpSearch(arr, k ,step, low, high);
+    }
+    public static int jumpSearch(int[] arr, int k, int step,int low, int high){
+        if(arr[low] == k){
+            return low;
+        }else if(arr[low] < k) {
+            low += step;
+        }
+        else if(arr[low] >= k){
+            high=low;
+            low=low-step;
+            for(int i = low, j = 0 ; i < high-1; i++,j++){
+                if(arr[i] >= k){
+                    return low+j;
+                }
+            }
+        }
+        return jumpSearch(arr, k, step,low, high);
+    }
     ///////Insert your code here. //////////////
 
     /**
@@ -73,9 +127,9 @@ public class HW3b {
         } //Output: 21897
 
         System.out.println("---------------Q2---------------------");
-        //System.out.println(findSubstring("125637891")); // Output: 789
-        //System.out.println(findSubstring("123567890127891")); // Output: 56789012
-        //System.out.println(findSubstring("34512348901234")); // Output: 8901234
+        System.out.println(findSubstring("125637891")); // Output: 789
+        System.out.println(findSubstring("123567890127891")); // Output: 56789012
+        System.out.println(findSubstring("34512348901234")); // Output: 8901234
 
         System.out.println("---------------Q3---------------------");
         int[] arr1 = {-15, -5, -2, 1, 3, 7, 15, 48, 97};
@@ -83,8 +137,8 @@ public class HW3b {
         int k1 = 15, k2 = 12;
         int stepSize = 3;
 
-        //System.out.println("Amount of elements smaller than 15: " + jumpSearch(arr1, k1, stepSize)); // Output: 6
-        //System.out.println("Amount of elements smaller than 12: " + jumpSearch(arr2, k2, stepSize)); // Output: 4
+        System.out.println("Amount of elements smaller than 15: " + jumpSearch(arr1, k1, stepSize)); // Output: 6
+        System.out.println("Amount of elements smaller than 12: " + jumpSearch(arr2, k2, stepSize)); // Output: 4
 
         System.out.println("---------------Q4---------------------");
         int[] arr3 = {-15, -5, -2, 1, 3, 7, 15, 48, 97};
