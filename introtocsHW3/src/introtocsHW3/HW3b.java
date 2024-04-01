@@ -83,11 +83,26 @@ public class HW3b {
         return maxSubstring;
     }
 
+    /**
+     * @param arr
+     * @param k
+     * @param step
+     * @return
+     */
     public static int jumpSearch(int[] arr, int k, int step){
         int low = 0;
         int high = arr.length;
         return jumpSearch(arr, k ,step, low, high);
     }
+
+    /**
+     * @param arr
+     * @param k
+     * @param step
+     * @param low
+     * @param high
+     * @return
+     */
     public static int jumpSearch(int[] arr, int k, int step,int low, int high){
         if(arr[low] == k){
             return low;
@@ -104,6 +119,34 @@ public class HW3b {
             }
         }
         return jumpSearch(arr, k, step,low, high);
+    }
+
+    public static int ternarySearch(int[] arr, int num){
+        int step = arr.length / 3;
+        if(arr[step] >= num){
+            for(int i = 0; i < step-1; i++){
+                if(arr[i] == num){
+                    return i;
+                }else{
+                    return -1;
+                }
+            }
+        }else if(arr[step*2-1] >= num){
+            for(int i = step; i < step*2-1; i++){
+                if(arr[i] == num){
+                    return i;
+                }else{
+                    return -1;
+                }
+            }
+        }else{
+            for(int i = step*2; i < arr.length-1; i++){
+                if(arr[i] == num){
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
     ///////Insert your code here. //////////////
 
@@ -146,8 +189,8 @@ public class HW3b {
         int num1 = 15;
         int num2 = 12;
 
-        //System.out.println(ternarySearch(arr3, num1)); // Output: 6
-        //System.out.println(ternarySearch(arr4, num2)); // Output: -1
+        System.out.println(ternarySearch(arr3, num1)); // Output: 6
+        System.out.println(ternarySearch(arr4, num2)); // Output: -1
 
         System.out.println("---------------Q5---------------------");
         char[] arr5 = {'z', 'm', 'Z', 'W', 'L', 'K', 'E', 'E', '1'};
