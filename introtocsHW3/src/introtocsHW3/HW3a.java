@@ -151,10 +151,23 @@ public class HW3a {
             return getEvenIndexLetters(str ,index , newWord);
         }
     }
+
+    /**
+     * @param n
+     * @param m
+     * @return
+     */
     public static boolean isPower(int n, int m){
         boolean result = isPower(n , m ,0);
         return result;
     }
+
+    /**
+     * @param n
+     * @param m
+     * @param index
+     * @return
+     */
     public static boolean isPower(int n, int m, int index) {
         if(m <= index){
             return false;
@@ -165,6 +178,32 @@ public class HW3a {
             index++;
             return isPower(n , m , index);
         }
+    }
+    public static int determinant(int[][] matrix){
+        if(matrix.length == 1){
+            return matrix[0][0];
+        }
+
+        if (matrix.length == 2){
+            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+        }
+
+        int det = 0;
+        for(int firstRowColumn_i = 0 ; firstRowColumn_i < matrix[0].length; firstRowColumn_i++){
+            int[][] smaller = new int[matrix.length -1][matrix.length -1];
+            for(int row = 1; row < matrix.length; row++){
+                for(int col = 0 ; col < matrix[0].length; col++){
+                    if ( col < firstRowColumn_i){
+                        smaller[row-1][col] = matrix[row][col];
+                    }else if( col > firstRowColumn_i){
+                        smaller[row -1][col -1] = matrix[row][col];
+                    }
+                }
+
+            }
+            det += matrix[0][firstRowColumn_i] * Math.pow(-1,firstRowColumn_i) * determinant(smaller);
+        }
+        return det;
     }
 
     /**
@@ -213,7 +252,7 @@ public class HW3a {
                 { 1, 0, 5, 0 }
         };
 
-       // System.out.println("Determinant of the matrix is : " + determinant(matrix2)); // Determinant of the matrix is : 30
+        System.out.println("Determinant of the matrix is : " + determinant(matrix2)); // Determinant of the matrix is : 30
 
         //---------------Q7---------------------
         int[] arr1 = {3, 8, 15, 97, 6};
