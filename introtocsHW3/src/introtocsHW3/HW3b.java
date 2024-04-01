@@ -25,6 +25,9 @@ import java.util.Arrays;
  *
  * @author Yael Veksler
  */
+//Assignment : 3 b
+// Author : Yanir Latychev ID:207325093
+
 public class HW3b {
     public static int findCarOwner(int[] carNumbers, String[] owners){
         for(int i = 0; i < owners.length-1; i++){

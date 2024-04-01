@@ -26,7 +26,7 @@ import java.util.Arrays;
  * @author Yael Veksler
  */
 
-    //Assignment : 3
+    //Assignment : 3 a
     // Author : Yanir Latychev ID:207325093
 
 public class HW3a {
