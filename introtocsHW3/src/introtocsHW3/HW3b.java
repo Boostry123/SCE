@@ -27,7 +27,29 @@ import java.util.Arrays;
  */
 public class HW3b {
     public static int findCarOwner(int[] carNumbers, String[] owners){
-        return 3;
+        for(int i = 0; i < owners.length-1; i++){
+            owners[i] = owners[i].toLowerCase();
+        }
+
+
+        for(int i = 0 ;i < owners.length-1; i++){
+            int counter = 0;
+            for(int j = 0 ; j < owners[i].length()-1; j++){
+
+                for(int k = j+1 ; k < owners[j].length()-1; k++){
+                    char tempChar = owners[i].charAt(j);
+                    if(tempChar == owners[i].charAt(k)){
+                        counter++;
+                    }
+                }
+                if(counter < 1){
+                    return carNumbers[i];
+                }
+
+
+            }
+        }
+        return -1;
     }
     ///////Insert your code here. //////////////
 
