@@ -207,6 +207,99 @@ public class HW3a {
     }
 
     /**
+     * @param arr
+     * @param sum
+     * @return
+     */
+    public static boolean subsetSum(int[] arr, int sum){
+
+        boolean result = subsetSum(arr,sum ,0);
+        return result;
+    }
+
+    /**
+     * @param arr
+     * @param sum
+     * @param index
+     * @return
+     */
+    private static boolean subsetSum(int[] arr, int sum, int index){
+        if(sum == 0 ) {
+            return true;
+        }
+        int tempSum = 0;
+        for(int i = 0 ;i < arr.length-1; i ++){
+            tempSum+= arr[i];
+            if(sum == arr[index] + arr[i]){
+                return true;
+            }else if(tempSum == sum){
+                return true;
+            }
+        }
+        if(index == arr.length-1){
+            return false;
+        }
+        index++;
+        return subsetSum(arr, sum, index);
+    }
+
+    /**
+     * @param n
+     * @return
+     */
+    public static int tribonacciElement(int n){
+        int [] tribonacciStart = new int[n+1];
+        int[] result = tribonacciElement(n+1,tribonacciStart,0);
+        return result[n];
+    }
+
+    /**
+     * @param n
+     * @param tribonacci
+     * @param index
+     * @return
+     */
+    private static int[] tribonacciElement(int n,int[] tribonacci,int index){
+        if(index == 0 || index == 1){
+            tribonacci[index] = 0;
+        }else if(index == 2){
+            tribonacci[index] = 1;
+        }else{
+            tribonacci[index] = tribonacci[index-1] + tribonacci[index-2] + tribonacci[index-3];
+        }
+        if(index == n-1){
+            return tribonacci;
+        }
+        index++;
+        return tribonacciElement(n,tribonacci,index);
+    }
+
+
+    /**
+     * @param n
+     * @return
+     */
+    public static int[] tribonacciSequence(int n){
+        int [] tribonacciStart = new int[n+1];
+        int[] result = tribonacciSequence(n+1,tribonacciStart,0);
+        return result;
+    }
+    private static int[] tribonacciSequence(int n,int[] tribonacci,int index){
+        if(index == 0 || index == 1){
+            tribonacci[index] = 0;
+        }else if(index == 2){
+            tribonacci[index] = 1;
+        }else{
+            tribonacci[index] = tribonacci[index-1] + tribonacci[index-2] + tribonacci[index-3];
+        }
+        if(index == n-1){
+            return tribonacci;
+        }
+        index++;
+        return tribonacciSequence(n,tribonacci,index);
+    }
+
+    /**
      * Main method for testing the implemented functions.
      */
     
@@ -257,19 +350,19 @@ public class HW3a {
         //---------------Q7---------------------
         int[] arr1 = {3, 8, 15, 97, 6};
         int sum1 = 9;
-        //System.out.println("Subset with sum " + sum1 + " exists: " + subsetSum(arr1, sum1)); // Subset with sum 9 exists: true
+        System.out.println("Subset with sum " + sum1 + " exists: " + subsetSum(arr1, sum1)); // Subset with sum 9 exists: true
 
         int[] arr2 = {4, 5, 87, 2, 12, 3};
         int sum2 = 13;
-        //System.out.println("Subset with sum " + sum2 + " exists: " + subsetSum(arr2, sum2)); // Subset with sum 13 exists: false
+        System.out.println("Subset with sum " + sum2 + " exists: " + subsetSum(arr2, sum2)); // Subset with sum 13 exists: false
 
         //---------------Q8---------------------
         int n = 10;
-        //System.out.println("Tribonacci element at index " + n + ": " + tribonacciElement(n)); // Tribonacci element at index 10: 81
+        System.out.println("Tribonacci element at index " + n + ": " + tribonacciElement(n)); // Tribonacci element at index 10: 81
 
         //---------------Q9---------------------
-        //int[] result = tribonacciSequence(n); //n=10
-        //System.out.println("Tribonacci sequence for n=" + n + ": " + Arrays.toString(result)); //Tribonacci sequence for n=10: [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
+        int[] result = tribonacciSequence(n); //n=10
+        System.out.println("Tribonacci sequence for n=" + n + ": " + Arrays.toString(result)); //Tribonacci sequence for n=10: [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
 
         //---------------Q10--------------------
         int num = 60;
