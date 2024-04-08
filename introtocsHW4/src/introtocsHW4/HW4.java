@@ -145,7 +145,7 @@ public class HW4 {
         System.out.println("Q3: "+ bubbleSort(arr3));
     // testing the bubbleSortReverse:
         int[] arr4 = {24 ,10 ,15 ,25 ,13 ,7 ,19 ,4 ,21};
-        System.out.println(bubbleSortReverse(arr4));
+        System.out.println("Q4: " +bubbleSortReverse(arr4));
     }
 
 
