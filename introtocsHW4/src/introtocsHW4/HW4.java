@@ -94,19 +94,58 @@ public class HW4 {
     }
 
 
+    /**
+     * @param arr
+     *      * @param i
+     *      * @param stopPoint
+     *      * @param counter
+     * @return the amount of swaps made
+     */
+    public static int bubbleSortReverse(int[] arr){
+        int stopPoint = 0;
+        int counter = 0;
+        int i = 0;
+        while(stopPoint != Math.pow(arr.length,2)){
+            if(i >= arr.length-1){
+                i =0;
+            }
+            if(arr[i+1] > arr[i]){
+                stopPoint++;
+                counter++;
+                int tmp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = tmp;
+            }else{
+                stopPoint++;
+            }
+            i++;
+
+        }
+        return counter;
+
+    }
+
+
+
+
+
+
 
 
     public static void main(String[] args) {
 
     // testing the interpolationSearch:
         char[] arr = {'z','m','Z','W','L','K','E','E','1'};
-        System.out.println(" The index is " +interpolationSearch(arr, 'E'));
+        System.out.println("Q1: "+"The index is " +interpolationSearch(arr, 'E'));
     // testing the insertionSort:
         int[] arr2 = {24 ,10 ,15 ,25 ,13 ,7 ,19 ,4 ,21};
-        System.out.println( insertionSort(arr2));
+        System.out.println("Q2: "+ insertionSort(arr2));
     // testing the bubbleSort:
         char[] arr3 =  { 'Y', 'K', 'P', 'Z', 'N', 'H', 'T', 'E', 'V'};
-        System.out.println(bubbleSort(arr3));
+        System.out.println("Q3: "+ bubbleSort(arr3));
+    // testing the bubbleSortReverse:
+        int[] arr4 = {24 ,10 ,15 ,25 ,13 ,7 ,19 ,4 ,21};
+        System.out.println(bubbleSortReverse(arr4));
     }
 
 
