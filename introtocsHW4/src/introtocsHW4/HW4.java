@@ -1,4 +1,5 @@
 package introtocsHW4;
+import java.util.Scanner;
 
 public class HW4 {
     /**
@@ -125,6 +126,92 @@ public class HW4 {
 
     }
 
+
+    /**
+     * @param array
+     * @param a
+     * @param b
+     * @return returns an array with swaped variables.
+     */
+    /// Functions used for Question 6 (Game):
+    public static int[] swap (int[] array,int a,int b){
+        int tmp = array[a];
+        array[a] = array[b];
+        array[b] = tmp;
+        return array;
+    }
+
+public static boolean isValidMove (int[] array, int a,int b){
+        boolean state = true;
+        if(a<0 || b>array.length-1 || a != b-1){
+            state = false;
+        }
+        return state;
+}
+
+public static boolean isSorted (int[] array){
+        boolean state = true;
+        for(int i = 0; i< array.length-2 ; i++){
+            for(int j = 1; j < array.length-1 ; j++){
+                if(array[i] < array[j]){
+                    state = false;
+                }
+            }
+        }
+        return state;
+}
+private static int[] makeArray(int[] arr){
+        for(int i = 0; i < arr.length; i++){
+            if(arr.length == 5){
+                int rnd = (int)Math.random()*10;
+                arr[i] = rnd;
+            }else if(arr.length == 6){
+                int rnd = (int)Math.random()*10+5;
+                arr[i] = rnd;
+            }else{
+                int rnd = (int)Math.random()*10+10;
+                arr[i] = rnd;
+            }
+
+        }
+        return arr;
+}
+
+public static int[] getNumbersForDifficulty (int a){
+        int[]inValid = null;
+        switch (a){
+            case(1): int[] arr1 = new int[5];
+            arr1 = makeArray(arr1);
+            return arr1;
+
+            case(2): int[] arr2 = new int[6];
+            arr2 = makeArray(arr2);
+            return arr2;
+
+            case(3): int[] arr3 = new int[7];
+            arr3 = makeArray(arr3);
+            return arr3;
+
+        }
+        return inValid;
+
+}
+
+public static int selectDifficulty (int a){
+        int num = 0;
+    Scanner scanner = new Scanner(System.in);
+    do {
+        System.out.print("Select Difficulty:");
+        System.out.print("1. Easy");
+        System.out.print("2. Medium");
+        System.out.print("3. Hard");
+        System.out.println("Enter your Choice: ");
+        num = scanner.nextInt();
+    }
+    while (num != 1 || num != 2 || num !=3);
+
+    return num;
+}
 
 
 
