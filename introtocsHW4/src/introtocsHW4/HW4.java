@@ -1,4 +1,5 @@
 package introtocsHW4;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HW4 {
@@ -150,26 +151,24 @@ public static boolean isValidMove (int[] array, int a,int b){
 }
 
 public static boolean isSorted (int[] array){
-        boolean state = true;
-        for(int i = 0; i< array.length-2 ; i++){
-            for(int j = 1; j < array.length-1 ; j++){
+
+        for(int i = 0, j = 1; i< array.length-1 ; i++,j++){
                 if(array[i] < array[j]){
-                    state = false;
-                }
+                    return false;
             }
         }
-        return state;
+        return true;
 }
 private static int[] makeArray(int[] arr){
         for(int i = 0; i < arr.length; i++){
             if(arr.length == 5){
-                int rnd = (int)Math.random()*10;
+                int rnd = (int)(Math.random()*10);
                 arr[i] = rnd;
             }else if(arr.length == 6){
-                int rnd = (int)Math.random()*10+5;
+                int rnd = (int)(Math.random()*10+5);
                 arr[i] = rnd;
             }else{
-                int rnd = (int)Math.random()*10+10;
+                int rnd = (int)(Math.random()*10+10);
                 arr[i] = rnd;
             }
 
@@ -197,22 +196,79 @@ public static int[] getNumbersForDifficulty (int a){
 
 }
 
-public static int selectDifficulty (int a){
+public static int selectDifficulty (){
         int num = 0;
     Scanner scanner = new Scanner(System.in);
-    do {
-        System.out.print("Select Difficulty:");
-        System.out.print("1. Easy");
-        System.out.print("2. Medium");
-        System.out.print("3. Hard");
+    while (true) {
+        System.out.println("Select Difficulty:");
+        System.out.println("1. Easy");
+        System.out.println("2. Medium");
+        System.out.println("3. Hard");
         System.out.println("Enter your Choice: ");
         num = scanner.nextInt();
+        if(num == 1 || num == 2 || num == 3){
+            break;
+        }
     }
-    while (num != 1 || num != 2 || num !=3);
+
 
     return num;
 }
 
+public static int getMoves (int[] arr){
+        int insertionSort = insertionSort(Arrays.copyOf(arr,arr.length));
+        int bubbleSortReverse = bubbleSortReverse(Arrays.copyOf(arr,arr.length));
+        return (insertionSort * bubbleSortReverse) / 2;
+
+}
+private static void displayArray ( int[] arr){
+        int counter = 0;
+        for(int i : arr){
+            System.out.println(counter + ": " + i);
+            counter++;
+        }
+}
+
+public static void playSortingChallenge (){
+    System.out.println("Welcome to Number Sorting Challenge!");
+    int difficulty = selectDifficulty();
+
+    int[] arr = getNumbersForDifficulty(difficulty);
+    int moves = getMoves(arr);
+    while(isSorted(arr) || moves < 5){
+        arr = getNumbersForDifficulty(difficulty);
+        moves = getMoves(arr);
+
+
+    }
+
+
+    while(moves > 0){
+        if(isSorted(arr)){
+            displayArray(arr);
+            break;
+        }
+        Scanner scanner = new Scanner(System.in);
+        displayArray(arr);
+        System.out.println("Moves left : " + moves);
+        System.out.println("Choose index a: ");
+        int numA = scanner.nextInt();
+        System.out.println("Choose index b: ");
+        int numB = scanner.nextInt();
+
+        if(isValidMove(arr,numA,numB)){
+            arr = swap(arr,numA,numB);
+            moves--;
+        }
+
+    }
+    if(isSorted(arr)){
+
+        System.out.println("Congratulations! You sorted the numbers in descending order!");
+    }else{
+        System.out.println("Out of moves! Game over.");
+    }
+}
 
 
 
@@ -233,6 +289,7 @@ public static int selectDifficulty (int a){
     // testing the bubbleSortReverse:
         int[] arr4 = {24 ,10 ,15 ,25 ,13 ,7 ,19 ,4 ,21};
         System.out.println("Q4: " +bubbleSortReverse(arr4));
+        playSortingChallenge();
     }
 
 
