@@ -4,7 +4,7 @@ package queue;
 public class ArrayQueue implements Queue
 {
 
-    private Object[] queue;
+    private Object[] queue = new Object[20];
     private int size;
 
     public boolean enqueue(Object element){
@@ -15,6 +15,7 @@ public class ArrayQueue implements Queue
                     break;
                 }
             }
+            size++;
             return true;
         }else{
             return false;
