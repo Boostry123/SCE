@@ -1,5 +1,10 @@
+import queue.ArrayQueue;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        ArrayQueue testArray = new ArrayQueue();
+        testArray.enqueue(2);
+        testArray.enqueue(5);
+        testArray.size();
     }
 }

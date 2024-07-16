@@ -8,13 +8,25 @@ public class ArrayQueue implements Queue
     private int size;
 
     public boolean enqueue(Object element){
-        return true;
+        if(size < 20){
+            for(int i = 0; i < size-1 ; i++){
+                if(queue[i] == null){
+                    queue[i] = element;
+                    break;
+                }
+            }
+            return true;
+        }else{
+            return false;
+        }
+
     }
     public Object dequeue(){
         if (queue[0] != null){
             Object temp = queue[0];
             for(int i= 0; i< queue.length; i++){
                 queue[i] = queue[i+1];
+                size--;
             }
             return temp;
         }else{
