@@ -154,7 +154,7 @@ public class HW3b {
     ///////Insert your code here. //////////////
 
     /**
-     * Main method for testing the implemented functions.
+     * OOPex1.src.Main method for testing the implemented functions.
      */
     public static void main(String[] args) {
         System.out.println("---------------Q1---------------------");

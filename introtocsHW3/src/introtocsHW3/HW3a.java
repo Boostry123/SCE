@@ -300,7 +300,7 @@ public class HW3a {
     }
 
     /**
-     * Main method for testing the implemented functions.
+     * OOPex1.src.Main method for testing the implemented functions.
      */
     
     public static void main(String[] args) {

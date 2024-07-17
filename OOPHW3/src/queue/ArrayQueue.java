@@ -1,7 +1,7 @@
 package queue;
 //Author : Yanir Latyshev
 //Assignment : 3
-public class ArrayQueue implements Queue
+public class  ArrayQueue implements Queue
 {
 
     private Object[] queue = new Object[20];

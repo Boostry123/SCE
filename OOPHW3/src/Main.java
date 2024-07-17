@@ -8,6 +8,6 @@ public class Main {
         for(int i = 0; i < 20 ; i++){
             System.out.println(testArray.enqueue(5));
         }
-        System.out.println(testArray.size());
+        System.out.println(testArray.isEmpty());
     }
 }
