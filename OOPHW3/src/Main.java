@@ -1,13 +1,24 @@
 import queue.ArrayQueue;
-
+import set.SetUtils;
+import set.SimpleSet;
 public class Main {
     public static void main(String[] args) {
-        ArrayQueue testArray = new ArrayQueue();
-
-
-        for(int i = 0; i < 20 ; i++){
-            System.out.println(testArray.enqueue(5));
-        }
+        SimpleSet<Integer> testArray = new SimpleSet<>(5);
         System.out.println(testArray.isEmpty());
+        testArray.add(1);
+        testArray.add(2);
+        testArray.add(3);
+        testArray.add(4);
+        testArray.add(5);
+        testArray.add(6);
+
+
+        SimpleSet<Integer> testArray2 = new SimpleSet<>();
+        testArray.add(3);
+        testArray.add(4);
+        testArray.add(5);
+        testArray.add(6);
+
+        System.out.println(SetUtils.union(testArray.getElements(),testArray2.getElements()));
     }
 }
