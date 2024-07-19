@@ -10,7 +10,8 @@ public class SimpleSet<E> implements Set<E> {
 
     public SimpleSet(int capacity) {
         this.capacity = capacity;
-        elements =(E[]) new Object[capacity];
+        elements =(E[]) (new Object[capacity]);
+
     }
     public SimpleSet(){
         this(5);
@@ -64,5 +65,8 @@ public class SimpleSet<E> implements Set<E> {
         return size;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

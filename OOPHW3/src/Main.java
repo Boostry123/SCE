@@ -19,6 +19,10 @@ public class Main {
         testArray.add(5);
         testArray.add(6);
 
-        System.out.println(SetUtils.union(testArray.getElements(),testArray2.getElements()));
+
+        Integer[] result = SetUtils.union(testArray.getElements(),testArray2.getElements());
+        for(Integer i : result){
+            System.out.println(i);
+        }
     }
 }
