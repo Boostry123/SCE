@@ -1,5 +1,6 @@
 package set;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class SimpleSet<E> implements Set<E> {
@@ -8,17 +9,21 @@ public class SimpleSet<E> implements Set<E> {
     private int size = 0;
 
 
+
     public SimpleSet(int capacity) {
         this.capacity = capacity;
-        elements =(E[]) (new Object[capacity]);
+
+//        this.elements =(E[]) Array.newInstance(elementType, capacity);
+            this.elements =(E[]) new E[capacity];
 
     }
+
     public SimpleSet(){
-        this(5);
+        this.capacity = 5;
     }
 
     public E[] getElements() {
-        return elements;
+        return this.elements;
     }
 
     @Override
