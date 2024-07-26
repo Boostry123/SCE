@@ -3,30 +3,29 @@ import set.SetUtils;
 import set.SimpleSet;
 public class Main {
     public static void main(String[] args) {
-        SimpleSet<Integer> testArray = new SimpleSet<>(5);
+        SimpleSet<Double> testArray = new SimpleSet<>(5);
         System.out.println(testArray.isEmpty());
-        testArray.add(1);
-        testArray.add(2);
-        testArray.add(3);
-        testArray.add(4);
-        testArray.add(5);
-        testArray.add(6);
+        testArray.add(1.0);
+        testArray.add(2.0);
+        testArray.add(3.0);
+        testArray.add(4.0);
+        testArray.add(5.0);
+        testArray.add(6.0);
 
 
-        SimpleSet<Integer> testArray2 = new SimpleSet<>();
-        testArray.add(3);
-        testArray.add(4);
-        testArray.add(5);
-        testArray.add(6);
+        SimpleSet<Double> testArray2 = new SimpleSet<>();
+        testArray.add(3.0);
+        testArray.add(4.0);
+        testArray.add(5.0);
+        testArray.add(6.0);
 
-        SetUtils <Integer> utils = new SetUtils<>();
-        System.out.println((Integer[])testArray2.getElements());
+        System.out.println(testArray.getElements());
 
-        Integer[] test1 = (Integer[])testArray.getElements();
-        Integer[] test2 = (Integer[])testArray2.getElements();
-        Integer[] result = utils.union((Integer[])test1, test2);
-        for(Integer i : result){
-            System.out.println(i);
+        Double[] test1 = (testArray.getElements());
+        Double[] test2 = (testArray2.getElements());
+        Double[] result = SetUtils.union(test1, test2);
+        for(int i = 0 ; i < result.length ; i++){
+            System.out.println(result[i]);
         }
     }
 }

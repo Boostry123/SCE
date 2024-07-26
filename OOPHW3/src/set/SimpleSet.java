@@ -12,10 +12,7 @@ public class SimpleSet<E> implements Set<E> {
 
     public SimpleSet(int capacity) {
         this.capacity = capacity;
-
-//        this.elements =(E[]) Array.newInstance(elementType, capacity);
-            this.elements =(E[]) new E[capacity];
-
+        this.elements =(E[]) new Object[capacity];
     }
 
     public SimpleSet(){
@@ -23,19 +20,24 @@ public class SimpleSet<E> implements Set<E> {
     }
 
     public E[] getElements() {
-        return this.elements;
+        E[] temp = (E[])new Object[capacity];
+        for (int i = 0; i < capacity; i++) {
+            temp[i] = (E)elements[i];
+        }
+        return temp;
     }
 
     @Override
     public void add(E e){
-        if(size == capacity && !(this.contains(e))){
+        if(size == capacity){
             elements = Arrays.copyOf(elements,capacity+5);
             elements[size] = e;
-            size++;
-        }else if(!this.contains(e)){
-            elements[size] = e;
-            size++;
-        }
+            size++;}
+
+//        }else if(null){
+//            elements[size] = e;
+//            size++;
+//        }
     }
     public void remove(E e){
         for(int i = 0; i < size; i++){
@@ -72,6 +74,10 @@ public class SimpleSet<E> implements Set<E> {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "SimpleSet{" +
+                "capacity=" + capacity +
+                ", elements=" + Arrays.toString(elements) +
+                ", size=" + size +
+                '}';
     }
 }
