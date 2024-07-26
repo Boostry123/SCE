@@ -16,15 +16,11 @@ public class SimpleSet<E> implements Set<E> {
     }
 
     public SimpleSet(){
-        this.capacity = 5;
+        this(5);
     }
 
-    public E[] getElements() {
-        E[] temp = (E[])new Object[capacity];
-        for (int i = 0; i < capacity; i++) {
-            temp[i] = (E)elements[i];
-        }
-        return temp;
+    public E getElements(int index) {
+        return elements[index];
     }
 
     @Override
@@ -33,11 +29,10 @@ public class SimpleSet<E> implements Set<E> {
             elements = Arrays.copyOf(elements,capacity+5);
             elements[size] = e;
             size++;}
-
-//        }else if(null){
-//            elements[size] = e;
-//            size++;
-//        }
+        else if(elements[size] != e){
+            elements[size] = e;
+            size++;
+        }
     }
     public void remove(E e){
         for(int i = 0; i < size; i++){
