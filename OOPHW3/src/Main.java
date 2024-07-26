@@ -16,12 +16,17 @@ public class Main {
         SimpleSet<Double> testArray2 = new SimpleSet<>();
         testArray2.add(3.0);
         testArray2.add(4.0);
+        testArray2.add(2.0);
         testArray2.add(5.0);
         testArray2.add(6.0);
+        testArray2.add(7.0);
+        testArray2.add(8.0);
+
 
 
         Double[] test1 = new Double[testArray.size()];
         Double[] test2 = new Double[testArray2.size()];
+
 
         for(int i = 0; i < testArray.size(); i++){
             test1[i] = testArray.getElements(i);
@@ -30,9 +35,13 @@ public class Main {
             test2[i] = testArray2.getElements(i);
         }
 
-        Double[] result = SetUtils.union(test1, test2);
-        for(int i = 0 ; i < result.length ; i++){
-            System.out.println(result[i]);
+//        Double[] resultUnion = SetUtils.union(test1, test2);
+//        for(int i = 0 ; i < resultUnion.length ; i++){
+//            System.out.println(resultUnion[i]);
+//        }
+        Double[] resultIntersection = SetUtils.intersection(test1, test2);
+        for(int i = 0 ; i < resultIntersection.length ; i++){
+            System.out.println(resultIntersection[i]);
         }
     }
 }
