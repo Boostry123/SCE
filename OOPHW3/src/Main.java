@@ -72,7 +72,7 @@ public class Main {
             System.out.println(resultSymetricDifference[i]);
         }
         Double[] powerlist = {};
-        System.out.println(SetUtils.powerSet(powerlist));
+//        System.out.println(SetUtils.powerSet(powerlist));
     }
 
 
