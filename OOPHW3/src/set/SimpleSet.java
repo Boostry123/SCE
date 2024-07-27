@@ -1,4 +1,6 @@
 package set;
+//Author : Yanir Latyshev
+//Assignment : 3
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

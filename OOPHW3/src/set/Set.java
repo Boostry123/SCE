@@ -1,4 +1,6 @@
 package set;
+//Author : Yanir Latyshev
+//Assignment : 3
 
 public interface Set<E> {
     public void add(E e);
