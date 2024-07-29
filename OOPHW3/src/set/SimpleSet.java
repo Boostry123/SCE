@@ -21,8 +21,8 @@ public class SimpleSet<E> implements Set<E> {
         this(5);
     }
 
-    public E getElements(int index) {
-        return elements[index];
+    public E[] getElements() {
+        return elements;
     }
 
     @Override

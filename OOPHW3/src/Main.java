@@ -32,21 +32,10 @@ public class Main {
         testArray2.add(8.0);
 
 
-        //making new arrays of the type we want to make manipulations on.
-        Double[] test1 = new Double[testArray.size()];
-        Double[] test2 = new Double[testArray2.size()];
-
-        //adding the elements from the generic object array to our new arrays.
-        for(int i = 0; i < testArray.size(); i++){
-            test1[i] = testArray.getElements(i);
-        }
-        for(int i = 0; i < testArray2.size(); i++){
-            test2[i] = testArray2.getElements(i);
-        }
 
         // this loop uses 2 arrays to make a union between them and returns an array back.
 
-        Double[] resultUnion = SetUtils.union(test1, test2);
+        Object[] resultUnion = SetUtils.union(testArray, testArray2);
         System.out.println("##### Union #####");
         for(int i = 0 ; i < resultUnion.length ; i++){
            System.out.println(resultUnion[i]);
@@ -55,7 +44,7 @@ public class Main {
 
 
         //this loop uses 2 arrays to make an intersection between them and returns an array.
-
+/**
         Double[] resultIntersection = SetUtils.intersection(test1, test2);
         System.out.println("##### Intersection #####");
         for(int i = 0 ; i < resultIntersection.length ; i++){
@@ -84,6 +73,7 @@ public class Main {
 
         Double[] powerlist = {};
 //        System.out.println(SetUtils.powerSet(powerlist));
+ **/
     }
 
 
