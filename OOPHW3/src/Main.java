@@ -28,12 +28,11 @@ public class Main {
         testArray2.add(4.0);
         testArray2.add(5.0);
         testArray2.add(6.0);
-        testArray2.add(7.0);
         testArray2.add(8.0);
 
 
 
-        // this loop uses 2 arrays to make a union between them and returns an array back.
+        // this loop uses 2 objects of type SimpleSet to make a union between their elements and returns an array back.
 
         Object[] resultUnion = SetUtils.union(testArray, testArray2);
         System.out.println("##### Union #####");
@@ -43,9 +42,9 @@ public class Main {
         System.out.println();
 
 
-        //this loop uses 2 arrays to make an intersection between them and returns an array.
-/**
-        Double[] resultIntersection = SetUtils.intersection(test1, test2);
+        //this loop uses 2 object of type SimpleSet to make an intersection between their elements and returns an array.
+
+        Object[] resultIntersection = SetUtils.intersection(testArray, testArray2);
         System.out.println("##### Intersection #####");
         for(int i = 0 ; i < resultIntersection.length ; i++){
             System.out.println(resultIntersection[i]);
@@ -53,27 +52,27 @@ public class Main {
         System.out.println();
 
 
-        //this loop uses 2 arrays to make a difference between the test1 and test2 and return an array back.
+        //this loop uses 2 objects of type SimpleSet to make a difference between the Array1 to Array2 and return an array back.
 
-        Double[] resultDifference = SetUtils.difference(test1, test2);
-        System.out.println("##### Difference #####");
+        Object[] resultDifference = SetUtils.difference(testArray, testArray2);
+        System.out.println("##### Difference A/B #####");
         for(int i = 0; i < resultDifference.length; i++){
             System.out.println(resultDifference[i]);
         }
         System.out.println();
 
-        //this loop uses 2 arrays to make a Symetric difference between them and returns an array back.
+        //this loop uses Object of type SimpleSet to make a Symetric difference between them and returns an array back.
 
-        Double[] resultSymetricDifference = SetUtils.symetricDifference(test1,test2);
+        Object[] resultSymetricDifference = SetUtils.symetricDifference(testArray,testArray2);
         System.out.println("##### Symetric Difference #####");
         for(int i = 0; i < resultSymetricDifference.length; i++){
             System.out.println(resultSymetricDifference[i]);
         }
         System.out.println();
 
-        Double[] powerlist = {};
+        Object[] powerlist = {};
 //        System.out.println(SetUtils.powerSet(powerlist));
- **/
+
     }
 
 

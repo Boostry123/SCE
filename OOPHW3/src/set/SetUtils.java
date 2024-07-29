@@ -33,26 +33,26 @@ public class SetUtils <E> {
 
         return result;
     }
-//    public static <E> E[] intersection(E[] set1, E[] set2) {
-//        E[] result = set1;
-//        for (int i = 0; i < result.length; i++) {
-//            for (int j = 0; j < set2.length; j++) {
-//                if(result[i].equals(set2[j])){
-//                    break;
-//                }
-//                else if ((j == set2.length - 1 )) {
-//                    if((result[result.length-1] != set2[j])){
-//                        for (int k = i; k < result.length - 1; k++) {
-//                            result[k] = result[k + 1];
-//                        }
-//                        result = Arrays.copyOf(result, result.length - 1);
-//                        i--;
-//                    }
-//                }
-//            }
-//        }
-//        return result;
-//    }
+    public static <E> E[] intersection(SimpleSet<E> set1, SimpleSet<E> set2) {
+        E[] result = Arrays.copyOf(set1.getElements(), set1.size());
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < set2.size(); j++) {
+                if(result[i].equals(set2.getElements()[j])){
+                    break;
+                }
+                else if ((j == set2.size() - 1 )) {
+                    if((result[result.length-1] != set2.getElements()[j])){
+                        for (int k = i; k < result.length - 1; k++) {
+                            result[k] = result[k + 1];
+                        }
+                        result = Arrays.copyOf(result, result.length - 1);
+                        i--;
+                    }
+                }
+            }
+        }
+        return result;
+    }
 
     /**
      * recives 2 arrays of same type ,will create a new array of same type and will return what's in A but will removes what ever is in B and A.
@@ -61,21 +61,21 @@ public class SetUtils <E> {
      * @param <E>
      * @return array of type E
      */
-//    public static <E> E[] difference(E[] set1, E[] set2) {
-//        E[] result = set1;
-//        for (int i = 0; i < result.length; i++) {
-//            for (int j = 0; j < set2.length; j++) {
-//                if(result[i].equals(set2[j])){
-//                    for(int k = i; k < result.length-1; k++){
-//                        result[k] = result[k+1];
-//                    }
-//                    result = Arrays.copyOf(result, result.length - 1);
-//                    i--;
-//                }
-//            }
-//        }
-//        return result;
-//    }
+    public static <E> E[] difference(SimpleSet<E> set1,SimpleSet<E> set2) {
+        E[] result = Arrays.copyOf(set1.getElements(), set1.size());
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < set2.size(); j++) {
+                if(result[i].equals(set2.getElements()[j])){
+                    for(int k = i; k < result.length-1; k++){
+                        result[k] = result[k+1];
+                    }
+                    result = Arrays.copyOf(result, result.length - 1);
+                    i--;
+                }
+            }
+        }
+        return result;
+    }
 
     /**
      * to make a symetric differenece this method will use previous method (union,intersection and difference) ,
@@ -85,12 +85,20 @@ public class SetUtils <E> {
      * @param <E>
      * @return array of type E.
      */
-//    public static <E> E[] symetricDifference(E[] set1, E[] set2) {
-//        E[] temp = union(set1,set2);
-//        E[] temp2 = intersection(set1,set2);
-//        E[] result = difference(temp,temp2);
-//        return result;
-//    }
+    public static <E> E[] symetricDifference(SimpleSet<E> set1, SimpleSet<E> set2) {
+        E[] temp = union(set1,set2);
+        SimpleSet<E> newSet1 = new SimpleSet<>(temp.length);
+        for (int i = 0; i < temp.length; i++) {
+            newSet1.add(temp[i]);
+        }
+        E[] temp2 = intersection(set1,set2);
+        SimpleSet<E> newSet2 = new SimpleSet<>(temp2.length);
+        for (int i = 0; i < temp2.length; i++) {
+            newSet2.add(temp2[i]);
+        }
+        E[] result = difference(newSet1,newSet2);
+        return result;
+    }
 //    public static <E> ArrayList<E[]> powerSet(E[] set) {
 //
 //    }
