@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
+
         //initializing first array and adding elements to it.
         SimpleSet<Double> testArray = new SimpleSet<>(5);
         System.out.println(testArray.isEmpty());
@@ -72,10 +72,8 @@ public class Main {
 
         Object[][] powerlist = SetUtils.powerSet(testArray);
         System.out.println("##### Power set #####");
-        for (int i =0 ; i < powerlist.length; i++){
-            for(int j = 0 ; j < powerlist[i].length; i++){
-                System.out.println(powerlist[i][j]);
-            }
+        for(Object[] arr : powerlist){
+            System.out.println(Arrays.toString(arr));
         }
 //
 
