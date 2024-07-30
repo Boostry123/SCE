@@ -70,8 +70,14 @@ public class Main {
         }
         System.out.println();
 
-        Object[] powerlist = {};
-//        System.out.println(SetUtils.powerSet(powerlist));
+        Object[][] powerlist = SetUtils.powerSet(testArray);
+        System.out.println("##### Power set #####");
+        for (int i =0 ; i < powerlist.length; i++){
+            for(int j = 0 ; j < powerlist[i].length; i++){
+                System.out.println(powerlist[i][j]);
+            }
+        }
+//
 
     }
 

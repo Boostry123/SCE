@@ -99,7 +99,18 @@ public class SetUtils <E> {
         E[] result = difference(newSet1,newSet2);
         return result;
     }
-//    public static <E> ArrayList<E[]> powerSet(E[] set) {
-//
-//    }
+    public static <E> E[][] powerSet(SimpleSet<E> set) {
+        E[][] newArray = (E[][]) new Object[1][1];
+        for(int i = 0 ; i< Math.pow(set.size(),2);i++){
+            for(int j = 0,k = 0 ; j < set.size();j++){
+                if(newArray[i][k] != null && newArray[i][k].equals(set.getElements()[j])){
+                    k++;
+                }else{
+                    Arrays.copyOf(newArray[i],newArray[i].length+1);
+                    newArray[newArray.length-1][k] = set.getElements()[i];
+                }
+            }
+        }
+        return newArray;
+    }
 }
