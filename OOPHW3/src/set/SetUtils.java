@@ -99,12 +99,44 @@ public class SetUtils <E> {
         E[] result = difference(newSet1,newSet2);
         return result;
     }
-    public static <E> E[][] powerSet(SimpleSet<E> set) {
-        E[][] newArray = (E[][]) new Object[(int) Math.pow(set.size(),2)][];
 
 
+//        E[][] newArray = (E[][]) new Object[(int) Math.pow(2, set.size())][];
+//        for(int i = 0 ; i < set.size() ; i++){
+//            newArray[i] = (E[]) new Object[1];
+//            newArray[i][0] = set.getElements()[i];
+//        }
+//        for(int i = 0; i < newArray.length ; i++ ){
+//            for(int j = 0 ;j <set.size() ; j++){
+//                if(set.getElements()[i].equals(newArray[j][0])){
+//                    continue;
+//                }else{
+//                    System.out.println(newArray[i].length);
+//                    SimpleSet<E> temp = new SimpleSet<>(newArray[i].length);
+//                    for(int k = 0 ; k < newArray[i].length; k++){
+//                        temp.add(newArray[i][k]);
+//                    }
+//                    SimpleSet<E> temp2 = new  SimpleSet<>(1);
+//                    temp2.add(set.getElements()[j]);
+//                    for(int k = 0 ; k < newArray.length; k++){
+//                        if(newArray[k] == null){
+//                            newArray[k] = union(temp,temp2);
+//                            i++;
+//                            break;
+//
+//                        }
+//                    }
+//                    j--;
+//                    i=0;
+//
+//
+//                }
+//            }
+//        }
+//
+//
+//
+//        return newArray;
+//    }
 
-
-        return newArray;
-    }
 }

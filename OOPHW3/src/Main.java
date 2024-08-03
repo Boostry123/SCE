@@ -8,7 +8,7 @@ import set.SimpleSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Main {
+public class  Main {
     public static void main(String[] args) {
 
         //initializing first array and adding elements to it.
@@ -19,8 +19,7 @@ public class Main {
         testArray.add(2.0);
         testArray.add(3.0);
         testArray.add(4.0);
-        testArray.add(5.0);
-        testArray.add(6.0);
+
 
         //initializing second array and adding elements to it.
         SimpleSet<Double> testArray2 = new SimpleSet<>();
@@ -70,12 +69,6 @@ public class Main {
         }
         System.out.println();
 
-        Object[][] powerlist = SetUtils.powerSet(testArray);
-        System.out.println("##### Power set #####");
-        for(Object[] arr : powerlist){
-            System.out.println(Arrays.toString(arr));
-        }
-//
 
     }
 
