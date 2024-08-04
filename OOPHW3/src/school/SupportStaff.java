@@ -1,6 +1,12 @@
 package school;
 
 public abstract class SupportStaff extends Employee {
+    /**
+     * constructor for the SupportStaff
+     * @param name
+     * @param age
+     * @param salary
+     */
     SupportStaff(String name,int age,double salary){
         super(age, name, salary);
     }

@@ -2,11 +2,17 @@ package school;
 
 import java.util.Scanner;
 
+/**
+ * class that creates the Science teacher object.
+ */
 public class ScienceTeacher extends Teacher{
     public ScienceTeacher(String name, int age , double salary) {
         super(name,age,salary,"Science");
     }
 
+    /**
+     * generates a random question the teacher might ask , gives the user an option to answer with feedback.
+     */
     @Override
     public void generateQuestion() {
         double randomMass = Math.random()*100;
@@ -22,10 +28,18 @@ public class ScienceTeacher extends Teacher{
         }
 
     }
+
+    /**
+     * prints an action to the console.
+     */
     @Override
     public void teach(){
         System.out.println("The science teacher is teaching science." );
     }
+
+    /**
+     * prints an action to the console.
+     */
     @Override
     public void work(){
         System.out.println("The science teacher is working. ");

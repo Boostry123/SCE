@@ -1,5 +1,8 @@
 package school;
 
+/**
+ * Main class for running the school
+ */
 public class SchoolSystem {
     public static void main(String[] args) {
         Administrator principal = new Principal("John Doe", 45, 100000.0);

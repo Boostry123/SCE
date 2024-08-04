@@ -5,10 +5,17 @@ public class Principal extends Administrator{
         super(name,age,salary);
     }
 
+    /**
+     * prints an action to the console.
+     */
     @Override
     public void manage() {
         System.out.println("The principal is working. ");
     }
+
+    /**
+     * prints an action to the console.
+     */
     public void work(){
         System.out.println("The principal is managing the school.");
     }

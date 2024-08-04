@@ -2,19 +2,32 @@ package school;
 
 import java.util.Scanner;
 
+/**
+ * English teacher class
+ */
 public class EnglishTeacher extends Teacher {
     EnglishTeacher(String name, int age,double salary){
         super(name,age,salary,"English");
     }
 
+    /**
+     * completes the abstract Wrok function for parent class.
+     */
     @Override
     public void work() {
         System.out.println("the english teacher is working.");
     }
+
+    /**
+     * prints something related to the class.
+     */
     public void teach(){
         System.out.println("the english teacher is teaching english.");
     }
 
+    /**
+     * generates a question
+     */
     @Override
     public void generateQuestion() {
         Scanner sc = new Scanner(System.in);

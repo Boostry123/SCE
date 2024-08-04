@@ -12,26 +12,50 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    /**
+     * set for name
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * set for salary
+     * @param salary
+     */
     public void setSalary(double salary) {
         this.salary = salary;
     }
 
+    /**
+     * set for age
+     * @param age
+     */
     public void setAge(int age) {
         this.age = age;
     }
 
+    /**
+     * get age
+     * @return
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     * get name
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * get salary
+     * @return
+     */
     public double getSalary() {
         return salary;
     }
@@ -45,6 +69,11 @@ public abstract class Employee {
                 '}';
     }
 
+    /**
+     * checks if objects are equal according to type and fields
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,5 +83,8 @@ public abstract class Employee {
     }
 
 
+    /**
+     * an abstract function
+     */
     public abstract void work();
 }

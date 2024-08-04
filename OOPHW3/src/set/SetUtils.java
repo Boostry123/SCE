@@ -33,6 +33,14 @@ public class SetUtils <E> {
 
         return result;
     }
+
+    /**
+     * does the intersection action between two sets.
+     * @param set1
+     * @param set2
+     * @param <E>
+     * @return Array of type E.
+     */
     public static <E> E[] intersection(SimpleSet<E> set1, SimpleSet<E> set2) {
         E[] result = Arrays.copyOf(set1.getElements(), set1.size());
         for (int i = 0; i < result.length; i++) {

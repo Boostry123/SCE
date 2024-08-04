@@ -1,15 +1,27 @@
 package school;
 
 public class Secretary extends SupportStaff{
+    /**
+     * constructor for the secretary class.
+     * @param name
+     * @param age
+     * @param salary
+     */
     public Secretary(String name,int age,double salary) {
         super(name,age,salary);
     }
 
+    /**
+     * prints an action to the console.
+     */
     @Override
     public void work() {
         System.out.println("the secretary is working");
     }
 
+    /**
+     * prints random generated student list with grades.
+     */
     @Override
     public void support() {
         String[] studentNames = new String[30];
