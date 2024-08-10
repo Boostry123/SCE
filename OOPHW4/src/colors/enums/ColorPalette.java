@@ -1,5 +1,7 @@
 package colors.enums;
 
+//Assignment : 4
+//Author : Yanir Latyshev 207325093
 
 public class ColorPalette {
     private Color[] colors;

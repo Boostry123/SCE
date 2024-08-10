@@ -1,5 +1,10 @@
 package payments.enums;
+//Assignment : 4
+//Author : Yanir Latyshev 207325093
 
+/**
+ * Main class to run and test the Payment class.
+ */
 public class PaymentTest {
     public static void main(String[] args) {
         Payment pt1 = new Payment(100.0,PaymentMethod.CREDIT_CARD);

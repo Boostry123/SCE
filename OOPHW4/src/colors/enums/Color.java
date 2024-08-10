@@ -1,5 +1,10 @@
 package colors.enums;
+//Assignment : 4
+//Author : Yanir Latyshev 207325093
 
+/**
+ * Enum of colors
+ */
 public enum Color {
     RED(255,0,0),
     GREEN(0, 255, 0),
@@ -9,9 +14,20 @@ public enum Color {
 
     private int r, g, b;
 
+    /**
+     * Constructor for the r,g,b of each color.
+     * @param r
+     * @param g
+     * @param b
+     */
     Color(int r, int g, int b){
         this.r = r;
         this.g = g;
         this.b = b;
+    }
+
+    @Override
+    public String toString() {
+        return this.name()+"(" + r + "," + g + "," + b + ")";
     }
 }
