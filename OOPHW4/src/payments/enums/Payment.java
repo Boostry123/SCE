@@ -23,6 +23,10 @@ public class Payment {
         this.referenceNumber = "REF"+rnd;
     }
 
+    /**
+     * this method will return a String with the payment details.
+     * @return String
+     */
     public String printPaymentDetails(){
         return """
                 amount : %f

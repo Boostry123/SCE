@@ -26,6 +26,10 @@ public enum Color {
         this.b = b;
     }
 
+    /**
+     * toString will return the enum value name and its values.
+     * @return
+     */
     @Override
     public String toString() {
         return this.name()+"(" + r + "," + g + "," + b + ")";
