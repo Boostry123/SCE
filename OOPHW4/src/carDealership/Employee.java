@@ -53,6 +53,17 @@ public class Employee implements Comparable<Employee>{
     }
 
     @Override
+    public int compareTo(Employee other) {
+        if(this.sales > other.sales){
+            return 1;
+        }else if(this.sales < other.sales){
+            return -1;
+        }else {
+            return 0;
+        }
+    }
+
+    @Override
     public String toString() {
         return "name: " + name + ", ID: " + ID + ", sales: " + sales + ", Salary:" +salary();
     }

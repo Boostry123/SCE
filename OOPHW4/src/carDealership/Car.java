@@ -65,7 +65,7 @@ public class Car {
 
     public void carSale() throws IOException {
         try{
-            Path filePath = Paths.get("carDealership/carsSold.txt");
+            Path filePath = Paths.get("carDealership/Sold.txt");
             Files.writeString(filePath,"\n", StandardOpenOption.APPEND);
             Files.writeString(filePath,toString(),StandardOpenOption.APPEND);
         }catch (Exception e){
