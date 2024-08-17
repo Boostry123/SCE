@@ -36,10 +36,11 @@ public class Employee implements Comparable<Employee>{
 
         }
     }
-    public void CarSale(Car car,String path){
+    public void CarSale(Car car){
         sales++;
         try{
-            Path filePath = Paths.get(path);
+            Path filePath = Paths.get("OOPHW4/src/carDealership/Sold.txt");
+
             Files.writeString(filePath,toString(), StandardOpenOption.APPEND);
             car.carSale();
         }catch (Exception e){

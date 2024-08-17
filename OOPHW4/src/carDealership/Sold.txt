@@ -1,0 +1,2 @@
+name: Yossi, ID: 123456789, sales: 6, Salary:6600.0
+PlateNumber: 123456 YearOfMake: 2017 Brand: Toyota Kilo: 100000.000000 Price: 70000.000000

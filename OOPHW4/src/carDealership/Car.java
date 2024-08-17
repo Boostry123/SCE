@@ -65,7 +65,8 @@ public class Car {
 
     public void carSale() throws IOException {
         try{
-            Path filePath = Paths.get("OOPHW4\\src\\carDealership\\Sold.txt");
+            Path filePath = Paths.get("OOPHW4/src/carDealership/Sold.txt");
+
             Files.writeString(filePath,"\n", StandardOpenOption.APPEND);
             Files.writeString(filePath,toString(),StandardOpenOption.APPEND);
         }catch (Exception e){
@@ -93,6 +94,7 @@ public class Car {
     public double getPrice() {
         return price;
     }
+
 
     @Override
     public String toString() {

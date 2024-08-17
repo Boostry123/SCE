@@ -13,7 +13,7 @@ public class CarDealership {
         Path sold = Paths.get("Sold");
         Path CarDealerShip = Paths.get("OOPHW4/src/carDealership/CarDealership.txt");
 
-        Path EmployeePath = Paths.get("OOPHW4/src/carDealership/Employee.txt").toAbsolutePath();
+        Path EmployeePath = Paths.get("OOPHW4/src/carDealership/Employee.txt");
 
         ArrayList<Car> cars = new ArrayList<>();
         ArrayList<Employee> employees = new ArrayList<>();
@@ -73,9 +73,6 @@ public class CarDealership {
                 }
                 break;
             case 3:
-                for(Employee employee : sort(employees)){
-                    System.out.println(employee);
-                }
                 //Here we make two arrays that contains the Ids and PlateNumbers.
                 ArrayList<Integer> ids = new ArrayList<>();
                 ArrayList<Integer> carPlateNumbers = new ArrayList<>();
@@ -85,7 +82,51 @@ public class CarDealership {
                 for(Car car : cars) {
                     carPlateNumbers.add(car.getPlateNumber());
                 }
+                //printing out the list of sellers.
+                for(Employee employee : sort(employees)){
+                    System.out.println(employee.getName() + employee.getID());
+                }
+                //choosing a seller.
+                int sellerID;
+                while(true){
+                    System.out.println("choose a Seller by ID: ");
+                     sellerID = scanner.nextInt();
+                    if(ids.contains(sellerID)){
+                        break;
+                    }else{
+                        System.out.println("Wrong ID , try again: ");
+                    }
+                }
+                //printing out carPlateNumbers.
+                for(Car car : cars){
+                    System.out.println(car.getPlateNumber());
+                }
+                //choosing a car to sell.
+                int carPlateNumber;
+                while(true){
+                    System.out.println("choose Car plate Number: ");
+                    carPlateNumber = scanner.nextInt();
+                    if(carPlateNumbers.contains(carPlateNumber)){
+                        break;
+                    }else{
+                        System.out.println("Wrong Car number , try again: ");
+                    }
 
+                }
+                //Finding the chosen employee and Car
+                Car ChosenCar=null;
+                Employee ChosenEmployee=null;
+                for(Employee employee : employees){
+                    if(employee.getID() == sellerID){
+                        ChosenEmployee = employee;
+                    }
+                }
+                for(Car car : cars){
+                    if(car.getPlateNumber() == carPlateNumber){
+                        ChosenCar = car;
+                    }
+                }
+                ChosenEmployee.CarSale(ChosenCar);
 
 
 
