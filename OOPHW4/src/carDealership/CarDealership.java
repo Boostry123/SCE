@@ -99,7 +99,7 @@ public class CarDealership {
                 }
                 //printing out carPlateNumbers.
                 for(Car car : cars){
-                    System.out.println(car.getPlateNumber());
+                    System.out.println(car.toString());
                 }
                 //choosing a car to sell.
                 int carPlateNumber;

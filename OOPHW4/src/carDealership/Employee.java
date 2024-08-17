@@ -41,7 +41,7 @@ public class Employee implements Comparable<Employee>{
         try{
             Path filePath = Paths.get("OOPHW4/src/carDealership/Sold.txt");
 
-            Files.writeString(filePath,toString(), StandardOpenOption.APPEND);
+            Files.writeString(filePath,"\n"+this, StandardOpenOption.APPEND);
             car.carSale();
         }catch (Exception e){
             System.out.println(e);
