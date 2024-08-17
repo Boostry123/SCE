@@ -52,6 +52,18 @@ public class Employee implements Comparable<Employee>{
         return 6000 + 100 * sales;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public int getSales() {
+        return sales;
+    }
+
     @Override
     public int compareTo(Employee other) {
         if(this.sales > other.sales){
