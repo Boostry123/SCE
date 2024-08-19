@@ -12,6 +12,12 @@ public class Employee implements Comparable<Employee>{
     private int ID;
     private int sales;
 
+    /**
+     * constructor for a new employee
+     * @param name
+     * @param ID
+     * @param sales
+     */
     public Employee(String name, int ID, int sales) {
         try{
             for(int i =0; i < name.length(); i++){
@@ -38,12 +44,18 @@ public class Employee implements Comparable<Employee>{
 
         }
     }
+
+    /**
+     * car sale will get the available cars from the CarDealership file and update it accordingly, aswell for the Employee file,
+     * employee will recive a sale if everything goes right(all info was inputted correctly).
+     * @param car
+     */
     public void CarSale(Car car){
         sales++;
         try{
             Path filePath = Paths.get("OOPHW4/src/carDealership/Sold.txt");
 
-            Files.writeString(filePath,"\n"+this, StandardOpenOption.APPEND);
+            Files.writeString(filePath,this+"\n", StandardOpenOption.APPEND);
             car.carSale();
 
             Path carsPath = Paths.get("OOPHW4/src/carDealership/CarDealership.txt");
@@ -76,22 +88,40 @@ public class Employee implements Comparable<Employee>{
 
 
     }
+
+    /**
+     * @return calculated salary with bonuses.
+     */
     public double salary(){
         return 6000 + 100 * sales;
     }
 
+    /**
+     * getName
+     * @return name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return ID
+     */
     public int getID() {
         return ID;
     }
 
+    /**
+     * @return Sales
+     */
     public int getSales() {
         return sales;
     }
 
+    /**
+     * @param other the object to be compared.
+     * @return -1 if current employee has less sales than other, 0 if same sales count, 1 if current employee has more than other.
+     */
     @Override
     public int compareTo(Employee other) {
         if(this.sales > other.sales){
@@ -103,6 +133,9 @@ public class Employee implements Comparable<Employee>{
         }
     }
 
+    /**
+     * @return toString
+     */
     @Override
     public String toString() {
         return "name: " + name + ", ID: " + ID + ", sales: " + sales + ", Salary:" +salary();

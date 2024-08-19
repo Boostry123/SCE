@@ -60,18 +60,21 @@ public class CarDealership {
 
 
         switch (userChoice) {
+            //1st display the employees
             case 1:
                 for(Employee employee : sort(employees)){
                     System.out.println(employee);
 
                 }
                 break;
+                //2nd display the current available
             case 2:
                 for(Car car : cars){
                     System.out.println(car);
 
                 }
                 break;
+                //3rd  case user will be choosing an employee and choosing a car to sell, car will be then removed from the CarDealership file and from array, seller will recive a sale.
             case 3:
                 //Here we make two arrays that contains the Ids and PlateNumbers.
                 ArrayList<Integer> ids = new ArrayList<>();
@@ -126,12 +129,46 @@ public class CarDealership {
                         ChosenCar = car;
                     }
                 }
+                cars.remove(ChosenCar);
                 ChosenEmployee.CarSale(ChosenCar);
 
 
 
-
+            //4th case user will be adding a new car to the CarDealership file and you the list, Exception will be thorwn if a missmatch happens in the info provided by user.
             case 4:
+                try {
+                    System.out.println("Adding a new car:");
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Enter Car Number (6 digits): ");
+                    String carNumber = sc.nextLine();
+                    if (carNumber.length() != 6) {
+                        throw new InputMismatchException("Car number should be 6 digits");
+                    }
+                    System.out.println("Enter Year of make(2017 - current year: ");
+                    int yearOfMake = sc.nextInt();
+                    if (yearOfMake < 2017) {
+                        throw new InputMismatchException("Year of make should be 2017 or higher");
+                    }
+                    System.out.println("Enter Brand: ");
+                    String brand = sc.nextLine();
+                    if (brand.length() < 0) {
+                        throw new InputMismatchException("Brand cannot be empty");
+                    }
+                    System.out.println("Enter Mileage: ");
+                    double mileage = sc.nextDouble();
+                    if (mileage < 0) {
+                        throw new InputMismatchException("Mileage cannot be negative");
+                    }
+                    System.out.println("Enter price: ");
+                    double price = sc.nextDouble();
+                    if (price < 0) {
+                        throw new InputMismatchException("Price cannot be negative");
+                    }
+                }catch (InputMismatchException e){
+                    System.out.println(e);
+                    break;
+                }
+
             case 5:
                 break;
             default:scanner.close();
