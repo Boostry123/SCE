@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Car {
     int PlateNumber;
@@ -66,9 +68,8 @@ public class Car {
     public void carSale() throws IOException {
         try{
             Path filePath = Paths.get("OOPHW4/src/carDealership/Sold.txt");
-
-            Files.writeString(filePath,"\n", StandardOpenOption.APPEND);
             Files.writeString(filePath,toString(),StandardOpenOption.APPEND);
+            Files.writeString(filePath,"\n", StandardOpenOption.APPEND);
         }catch (Exception e){
             System.out.println(e);
         }

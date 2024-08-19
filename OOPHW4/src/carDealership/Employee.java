@@ -4,6 +4,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Employee implements Comparable<Employee>{
     private String name;
@@ -43,6 +45,31 @@ public class Employee implements Comparable<Employee>{
 
             Files.writeString(filePath,"\n"+this, StandardOpenOption.APPEND);
             car.carSale();
+
+            Path carsPath = Paths.get("OOPHW4/src/carDealership/CarDealership.txt");
+            List<String> cars = Files.readAllLines(carsPath);
+
+            ArrayList<String[]> carDetails = new ArrayList<>();
+            for(String carLine : cars){
+                carDetails.add(carLine.split(" "));
+            }
+
+            for(String[] plate : carDetails){
+                if(plate[0].equals(Integer.toString(car.PlateNumber))){
+                    carDetails.remove(plate);
+                    break;
+                }
+            }
+            Files.delete(carsPath);
+            Files.createFile(carsPath);
+
+            for(int j = 0; j < carDetails.size(); j++){
+                for(int i = 0; i < carDetails.get(0).length;i++){
+                    Files.writeString(carsPath, carDetails.get(j)[i]+" ",StandardOpenOption.APPEND);
+                }
+                Files.writeString(carsPath,"\n", StandardOpenOption.APPEND);
+            }
+
         }catch (Exception e){
             System.out.println(e);
         }
