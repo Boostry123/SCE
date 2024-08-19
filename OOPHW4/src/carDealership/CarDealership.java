@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -140,8 +141,8 @@ public class CarDealership {
                     System.out.println("Adding a new car:");
                     Scanner sc = new Scanner(System.in);
                     System.out.println("Enter Car Number (6 digits): ");
-                    String carNumber = sc.nextLine();
-                    if (carNumber.length() != 6) {
+                    int carNumber = sc.nextInt();
+                    if (Integer.toString(carNumber).length() != 6) {
                         throw new InputMismatchException("Car number should be 6 digits");
                     }
                     System.out.println("Enter Year of make(2017 - current year: ");
@@ -150,7 +151,7 @@ public class CarDealership {
                         throw new InputMismatchException("Year of make should be 2017 or higher");
                     }
                     System.out.println("Enter Brand: ");
-                    String brand = sc.nextLine();
+                    String brand = sc.next();
                     if (brand.length() < 0) {
                         throw new InputMismatchException("Brand cannot be empty");
                     }
@@ -164,10 +165,16 @@ public class CarDealership {
                     if (price < 0) {
                         throw new InputMismatchException("Price cannot be negative");
                     }
-                }catch (InputMismatchException e){
+                    Car newCar = new Car(carNumber,yearOfMake,brand,mileage,price);
+                    cars.add(newCar);
+                    Files.writeString(CarDealerShip,"\n"+newCar.getPlateNumber()+" "+newCar.getYearOfMake()+" "+newCar.getBrand()+" "+newCar.getKilo()+" "+newCar.getPrice(), StandardOpenOption.APPEND);
+
+                }catch (Exception e){
                     System.out.println(e);
                     break;
                 }
+
+
 
             case 5:
                 break;
