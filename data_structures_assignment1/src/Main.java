@@ -5,7 +5,10 @@ public class Main {
         // Example 1: Addition
         BigNum num1 = new BigNum("123456789123456789");
         BigNum num2 = new BigNum("987654321987654321");
+        System.out.println(num1);
+
         BigNum sum1 = num1.add(num2);
+
         System.out.println("Sum 1: " + sum1);  // Expected output: 1111111111111111110
 
         // Example 2: Addition
@@ -22,6 +25,7 @@ public class Main {
 
         // Example 4: Addition (Handling zeros)
         BigNum num7 = new BigNum("0");
+
         BigNum num8 = new BigNum("987654321");
         BigNum sum4 = num7.add(num8);
         System.out.println("Sum 4: " + sum4);  // Expected output: 987654321

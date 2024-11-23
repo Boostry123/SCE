@@ -8,6 +8,37 @@ public class BigNum {
     // The most significant digit will be stored at the head, and the least significant digit will be at the tail.
     public BigNum(String numberStr) {
         // TODO: Implement the string to linked list conversion
+
+        //checking if the number is short
+            if(numberStr.length() == 2){
+                head = new Link(numberStr.charAt(0));
+                tail = new Link(numberStr.charAt(1));
+                head.next = tail;
+                tail.prev = head;
+            }
+            else if(numberStr.length() == 1){
+                head = new Link(Character.getNumericValue(numberStr.charAt(0)));
+                tail = head;
+            }else{
+
+                head = new Link(Character.getNumericValue(numberStr.charAt(0)));
+                head.next = new Link(Character.getNumericValue(numberStr.charAt(1)));
+                Link temp = head.next;
+                Link tempPrev = head;
+                for(int i=2; i < numberStr.length() ; i++) {
+                    if(i == numberStr.length()-1){
+                        tail = new Link(Character.getNumericValue(numberStr.charAt(numberStr.length()-1)));
+                        tail.prev = temp;
+                        temp.next = tail;
+                        break;
+                    }
+                    temp.next = new Link(Character.getNumericValue(numberStr.charAt(i)));
+                    temp.prev = tempPrev;
+                    tempPrev = temp;
+                    temp = temp.next;
+                }
+        }
+
     }
 
     // Default constructor that creates an empty BigNum with no digits.
